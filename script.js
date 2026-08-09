@@ -1,7 +1,18 @@
 (() => {
-  const TASK_KEY = "da-work01-tasks-v1";
-  const NOTE_KEY = "da-work01-notes-v1";
-  const LOG_KEY = "da-work01-logs-v1";
+  const TASK_KEY = "da-indesign-project-current-tasks-v1";
+  const NOTE_KEY = "da-indesign-project-notes-v1";
+  const LOG_KEY = "da-indesign-project-logs-v1";
+  const LEGACY_KEYS = {
+    [TASK_KEY]: "da-work01-tasks-v1",
+    [NOTE_KEY]: "da-work01-notes-v1",
+    [LOG_KEY]: "da-work01-logs-v1",
+  };
+
+  Object.entries(LEGACY_KEYS).forEach(([currentKey, legacyKey]) => {
+    if (localStorage.getItem(currentKey) === null && localStorage.getItem(legacyKey) !== null) {
+      localStorage.setItem(currentKey, localStorage.getItem(legacyKey));
+    }
+  });
 
   const shell = document.querySelector(".app-shell");
   const taskInputs = [...document.querySelectorAll("[data-task]")];
@@ -182,12 +193,12 @@
     const userLogs = logs.map(
       (log) => `[${log.type}] ${formatDate(log.createdAt)} — ${log.title}\n${log.note}`,
     );
-    const text = ["DA INDESIGN WORKSHOP / WORK 01 LOG", "", ...seed, ...userLogs].join("\n\n");
+    const text = ["DA INDESIGN WORKSHOP / PROJECT LOG", "", ...seed, ...userLogs].join("\n\n");
     const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "DA_Work01_process-log.txt";
+    link.download = "DA_InDesign_Workshop_process-log.txt";
     link.click();
     URL.revokeObjectURL(url);
   });

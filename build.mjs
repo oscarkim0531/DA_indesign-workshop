@@ -6,17 +6,18 @@ const projectDir = path.dirname(fileURLToPath(import.meta.url));
 const outputDir = path.join(projectDir, "dist", "server");
 
 const sourceAssets = [
-  ["/", "index.html", "text/html; charset=utf-8"],
-  ["/index.html", "index.html", "text/html; charset=utf-8"],
-  ["/style.css", "style.css", "text/css; charset=utf-8"],
-  ["/script.js", "script.js", "text/javascript; charset=utf-8"],
+  ["/", "index.html", "text/html; charset=utf-8", "utf8"],
+  ["/index.html", "index.html", "text/html; charset=utf-8", "utf8"],
+  ["/style.css", "style.css", "text/css; charset=utf-8", "utf8"],
+  ["/script.js", "script.js", "text/javascript; charset=utf-8", "utf8"],
+  ["/og.png", "public/og.png", "image/png", "base64"],
 ];
 
 const assets = [];
-for (const [route, filename, contentType] of sourceAssets) {
+for (const [route, filename, contentType, encoding] of sourceAssets) {
   assets.push([
     route,
-    [await fs.readFile(path.join(projectDir, filename), "utf8"), contentType],
+    [await fs.readFile(path.join(projectDir, filename), encoding), contentType, encoding],
   ]);
 }
 
@@ -34,7 +35,12 @@ export default {
       });
     }
 
-    const [body, contentType] = asset;
+    const [sourceBody, contentType, encoding] = asset;
+    const body = encoding === "base64"
+      ? Uint8Array.from(atob(sourceBody), (character) => character.charCodeAt(0))
+      : contentType.startsWith("text/html")
+        ? sourceBody.replaceAll("__SITE_ORIGIN__", url.origin)
+        : sourceBody;
     return new Response(request.method === "HEAD" ? null : body, {
       status: 200,
       headers: {

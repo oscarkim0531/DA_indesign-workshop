@@ -11,8 +11,8 @@
   --white: #ffffff;
   --sidebar: 256px;
   --pad: clamp(24px, 5vw, 72px);
-  --display: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --display: "Pretendard", "SUIT", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Helvetica Neue", Arial, sans-serif;
+  --mono: "Pretendard", "SUIT", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Helvetica Neue", Arial, sans-serif;
 }
 
 * {
@@ -268,8 +268,9 @@ main {
 }
 
 .hero h1 em {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
+  font-family: var(--display);
+  font-style: normal;
+  font-weight: 700;
 }
 
 .hero-description {
@@ -449,6 +450,147 @@ main {
   color: var(--gray-700);
   font-family: var(--display);
   font-size: 14px;
+}
+
+.project-map-section {
+  background: var(--white);
+}
+
+.journey-status {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--black);
+  border-left: 1px solid var(--black);
+}
+
+.journey-status > div {
+  min-height: 118px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border-right: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+}
+
+.journey-status span,
+.milestone-copy > div,
+.update-policy > span {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.journey-status span {
+  color: var(--gray-500);
+}
+
+.journey-status strong {
+  font-size: clamp(16px, 1.7vw, 24px);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.master-timeline {
+  margin-top: 56px;
+  border-top: 1px solid var(--black);
+}
+
+.milestone {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  border-bottom: 1px solid var(--black);
+}
+
+.milestone-marker {
+  display: grid;
+  place-items: start center;
+  padding-top: 24px;
+  border-right: 1px solid var(--black);
+}
+
+.milestone-marker span {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid var(--black);
+  border-radius: 50%;
+  font-family: var(--mono);
+  font-size: 10px;
+}
+
+.milestone-copy {
+  min-height: 186px;
+  padding: 24px 28px 28px;
+}
+
+.milestone-copy > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  color: var(--gray-500);
+}
+
+.milestone-copy h3 {
+  margin: 26px 0 8px;
+  font-size: clamp(23px, 2.8vw, 38px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.milestone-copy p {
+  max-width: 760px;
+  margin-bottom: 0;
+  color: var(--gray-700);
+}
+
+.milestone-copy a {
+  display: inline-block;
+  margin-top: 18px;
+  border-bottom: 1px solid currentColor;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.milestone.is-active {
+  color: var(--white);
+  background: var(--black);
+}
+
+.milestone.is-active .milestone-marker,
+.milestone.is-active .milestone-marker span {
+  border-color: #444;
+}
+
+.milestone.is-active .milestone-copy > div,
+.milestone.is-active .milestone-copy p {
+  color: #aaa;
+}
+
+.milestone.is-locked {
+  color: var(--gray-500);
+  background: var(--gray-100);
+}
+
+.milestone.is-locked .milestone-marker span {
+  border-style: dashed;
+}
+
+.update-policy {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 32px;
+  margin-top: 30px;
+  padding: 24px 0;
+  border-top: 1px solid var(--gray-300);
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.update-policy p {
+  max-width: 860px;
+  margin-bottom: 0;
 }
 
 .today-grid {
@@ -690,7 +832,8 @@ select:focus-visible {
 .principle-banner blockquote {
   max-width: 980px;
   margin-bottom: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--display);
+  font-weight: 600;
   font-size: clamp(27px, 4vw, 56px);
   line-height: 1.25;
   letter-spacing: -0.035em;
@@ -877,7 +1020,8 @@ select:focus-visible {
   margin: 0;
   padding: 16px;
   border: 1px solid var(--gray-300);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--display);
+  font-weight: 500;
   font-size: 16px;
 }
 
@@ -1330,6 +1474,10 @@ select:focus-visible {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .journey-status {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .phase-card {
     grid-template-columns: 110px 1fr;
   }
@@ -1402,6 +1550,37 @@ select:focus-visible {
 
   .brief-grid {
     grid-template-columns: 1fr;
+  }
+
+  .journey-status {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-status > div {
+    min-height: 96px;
+  }
+
+  .milestone {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+
+  .milestone-copy {
+    min-height: 0;
+    padding: 22px 18px 26px;
+  }
+
+  .milestone-copy > div,
+  .update-policy {
+    grid-template-columns: 1fr;
+  }
+
+  .milestone-copy > div {
+    display: grid;
+    gap: 4px;
+  }
+
+  .update-policy {
+    gap: 12px;
   }
 
   .brief-cell {

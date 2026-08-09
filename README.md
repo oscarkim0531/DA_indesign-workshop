@@ -1,6 +1,6 @@
-# DA InDesign Workshop — Work 01
+# DA InDesign Workshop — Project Hub
 
-DA 인디자인 중급 워크숍의 첫 번째 과제를 계획하고 기록하는 정적 웹 인터페이스입니다.
+DA 인디자인 중급 워크숍의 전체 과정을 계획하고 기록하는 정적 웹 인터페이스입니다. 현재 공개된 Work 01을 활성 단계로 보여주고, 후속 안내가 도착하면 같은 구조에 이어서 확장합니다.
 
 - 핵심 일정·단계·콘텐츠: `index.html`
 - 시각 디자인과 반응형 레이아웃: `style.css`
