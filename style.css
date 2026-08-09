@@ -1139,6 +1139,20 @@ select:focus-visible {
   letter-spacing: 0.07em;
 }
 
+.core-question {
+  padding: clamp(30px, 5vw, 64px);
+  border-bottom: 1px solid var(--black);
+}
+
+.core-question h3 {
+  max-width: 1050px;
+  margin-bottom: 0;
+  font-size: clamp(34px, 5.5vw, 78px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+
 .selection-content {
   display: grid;
   grid-template-columns: minmax(260px, 0.36fr) minmax(0, 1fr);
@@ -1177,6 +1191,70 @@ select:focus-visible {
   font-weight: 500;
   line-height: 1.55;
   letter-spacing: -0.025em;
+}
+
+.data-policy-record {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.34fr) minmax(0, 1fr);
+  margin-top: 18px;
+  border: 1px solid var(--black);
+}
+
+.data-policy-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  padding: clamp(24px, 4vw, 42px);
+  border-right: 1px solid var(--black);
+}
+
+.data-policy-head > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+}
+
+.data-policy-head p {
+  margin-bottom: 0;
+  color: var(--gray-700);
+  font-size: 12px;
+}
+
+.data-policy-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.data-policy-list li {
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr);
+  min-height: 82px;
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.data-policy-list li:last-child {
+  border-bottom: 0;
+}
+
+.data-policy-list span {
+  display: grid;
+  place-items: center;
+  color: var(--gray-500);
+  border-right: 1px solid var(--gray-300);
+  font-family: var(--mono);
+  font-size: 9px;
+}
+
+.data-policy-list p {
+  align-self: center;
+  margin: 0;
+  padding: 18px 22px;
+  font-size: 13px;
 }
 
 .result-toggles {
@@ -1872,11 +1950,17 @@ select:focus-visible {
   .result-record,
   .result-kpis,
   .result-method,
-  .selection-content {
+  .selection-content,
+  .data-policy-record {
     grid-template-columns: 1fr;
   }
 
   .selection-content > div:first-child {
+    border-right: 0;
+    border-bottom: 1px solid var(--black);
+  }
+
+  .data-policy-head {
     border-right: 0;
     border-bottom: 1px solid var(--black);
   }

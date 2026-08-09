@@ -345,8 +345,8 @@
                 <div class="phase-tasks">
                   <label><input type="checkbox" data-task="r2-canonical" checked /><span>대표 파일: 2025 홍익시디 2학년 공지방_edit.csv</span></label>
                   <label><input type="checkbox" data-task="r2-columns" checked /><span>Date / User / Message 3열 구조 확인</span></label>
-                  <label><input type="checkbox" data-task="r2-exceptions" /><span>삭제 메시지·미디어 표시·중복 공지 처리 규칙 작성</span></label>
-                  <label><input type="checkbox" data-task="r2-privacy" /><span>실명·링크·개인정보 공개 범위 결정</span></label>
+                  <label><input type="checkbox" data-task="r2-exceptions-final" checked /><span>삭제·가림 37개 분리, 미디어는 수량으로 처리</span></label>
+                  <label><input type="checkbox" data-task="r2-privacy-final" checked /><span>발신자 익명화, 연락처·외부 링크 비노출</span></label>
                 </div>
                 <div class="deliverable"><span>OUTPUT</span><strong>소스 기준표 + 예외 처리 메모</strong></div>
               </div>
@@ -369,7 +369,7 @@
                   <span>확인 불가능한 인과관계는 추정으로 표시</span>
                 </div>
                 <div class="phase-tasks">
-                  <label><input type="checkbox" data-task="r3-question" /><span>이 책이 답할 핵심 질문 1개 작성</span></label>
+                  <label><input type="checkbox" data-task="r3-core-question" checked /><span>책이 답할 핵심 질문 확정</span></label>
                   <label><input type="checkbox" data-task="r3-prompt" /><span>첫 프롬프트와 사용 모델 기록</span></label>
                   <label><input type="checkbox" data-task="r3-stats" checked /><span>20가지 분석·통계 도출 및 검산</span></label>
                   <label><input type="checkbox" data-task="r3-perspective" checked /><span>핵심 분석 8개 선택 및 관점 확정</span></label>
@@ -481,6 +481,10 @@
               <span>MANUSCRIPT SELECTION</span>
               <strong>CONFIRMED</strong>
             </div>
+            <div class="core-question">
+              <p class="eyebrow">이 책이 답할 핵심 질문</p>
+              <h3>한 학년 동안 공지방에 온<br />학과 공지는 어떤 규칙이 있을까?</h3>
+            </div>
             <div class="selection-content">
               <div>
                 <p class="eyebrow">선택한 분석 번호 · 8개</p>
@@ -499,6 +503,19 @@
                 </blockquote>
               </div>
             </div>
+          </article>
+
+          <article class="data-policy-record">
+            <div class="data-policy-head">
+              <div><span>DATA USE POLICY</span><strong>v1.0</strong></div>
+              <p>원고 생성과 소책자 편집에서 지킬 기준. 새로운 상황이 생기면 이 목록에 추가한다.</p>
+            </div>
+            <ol class="data-policy-list">
+              <li><span>01</span><p>실제 발신자 이름은 발신량 순서에 따라 <strong>A–M으로 익명화</strong>한다.</p></li>
+              <li><span>02</span><p><strong>삭제·가림 메시지 37개</strong>는 날짜·시간·발신자 분석과 분리한다.</p></li>
+              <li><span>03</span><p>실제 이미지가 없는 ‘사진’, ‘사진 N장’, ‘동영상’ 표시는 <strong>미디어 수량으로만 활용</strong>한다.</p></li>
+              <li><span>04</span><p>개인 연락처와 외부 링크는 원고에 <strong>원문 그대로 노출하지 않는다.</strong></p></li>
+            </ol>
           </article>
 
           <div class="result-toggles">
@@ -753,7 +770,7 @@
               <div class="archive-toolbar">
                 <div>
                   <span>WORK LOG</span>
-                  <strong><span data-log-count>4</span> entries</strong>
+                  <strong><span data-log-count>5</span> entries</strong>
                 </div>
                 <button type="button" data-export-log>TXT로 내보내기</button>
               </div>
@@ -778,6 +795,11 @@
                   <div class="log-meta"><span>DECISION</span><time datetime="2026-08-09">2026.08.09</time></div>
                   <h3>핵심 분석 8개와 분석 관점 확정</h3>
                   <p>01·02·07·08·09·13·17·18을 선택하고, 공지방을 학교생활을 운영한 작은 정보 유통 시스템으로 분석하기로 했다.</p>
+                </article>
+                <article class="log-entry log-seed">
+                  <div class="log-meta"><span>DECISION</span><time datetime="2026-08-09">2026.08.09</time></div>
+                  <h3>데이터 원칙과 핵심 질문 확정</h3>
+                  <p>익명화·삭제 기록 분리·미디어 수량 처리·민감 정보 비노출 원칙을 정하고, “한 학년 동안 공지방에 온 학과 공지는 어떤 규칙이 있을까?”를 핵심 질문으로 확정했다.</p>
                 </article>
               </div>
             </div>
