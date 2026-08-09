@@ -162,7 +162,7 @@
         logList.insertBefore(article, logList.querySelector(".log-seed"));
       });
 
-    if (logCount) logCount.textContent = String(logs.length + 3);
+    if (logCount) logCount.textContent = String(logs.length + 4);
   };
 
   archiveForm?.addEventListener("submit", (event) => {
@@ -190,6 +190,7 @@
       "[SOURCE] 2026.08.07 — 공지방 원본 정리\n참여자 입·퇴장 기록을 제거하고 Date / User / Message 구조의 원본을 준비했다.",
       "[DECISION] 2026.08.09 — 대표 원본을 CSV로 고정\n동일한 내보내기 사본을 구분하고, 분석 기준 파일을 edit.csv 하나로 정했다.",
       "[RESULT] 2026.08.09 — 20가지 분석·통계 도출\n공지의 크기, 편집 문법, 시간, 발신자 차이를 네 개의 대제목과 20개의 검산 가능한 분석으로 구조화했다.",
+      "[DECISION] 2026.08.09 — 핵심 분석 8개와 분석 관점 확정\n01·02·07·08·09·13·17·18을 선택하고, 공지방을 학교생활을 운영한 작은 정보 유통 시스템으로 분석하기로 했다.",
     ];
     const userLogs = logs.map(
       (log) => `[${log.type}] ${formatDate(log.createdAt)} — ${log.title}\n${log.note}`,

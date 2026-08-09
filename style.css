@@ -1122,6 +1122,63 @@ select:focus-visible {
   font-size: 11px;
 }
 
+.selection-record {
+  margin-top: 48px;
+  border: 1px solid var(--black);
+}
+
+.selection-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 16px;
+  color: var(--white);
+  background: var(--black);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.07em;
+}
+
+.selection-content {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.36fr) minmax(0, 1fr);
+}
+
+.selection-content > div {
+  padding: clamp(24px, 4vw, 48px);
+}
+
+.selection-content > div:first-child {
+  border-right: 1px solid var(--black);
+}
+
+.selection-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--black);
+  border-left: 1px solid var(--black);
+}
+
+.selection-numbers span {
+  min-height: 58px;
+  display: grid;
+  place-items: center;
+  border-right: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.selection-perspective blockquote {
+  max-width: 900px;
+  margin-bottom: 0;
+  font-size: clamp(18px, 2.1vw, 28px);
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: -0.025em;
+}
+
 .result-toggles {
   margin-top: 48px;
   border-top: 1px solid var(--black);
@@ -1183,6 +1240,30 @@ select:focus-visible {
 
 .analysis-list article:last-child {
   border-bottom: 0;
+}
+
+.analysis-list article.is-selected {
+  background: var(--gray-100);
+  box-shadow: inset 4px 0 0 var(--black);
+}
+
+.analysis-list article.is-selected > span {
+  color: var(--black);
+  font-weight: 700;
+}
+
+.analysis-list article.is-selected h3::after {
+  content: "SELECTED";
+  display: inline-block;
+  margin-left: 10px;
+  padding: 3px 5px;
+  color: var(--white);
+  background: var(--black);
+  font-family: var(--mono);
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  vertical-align: 0.25em;
 }
 
 .analysis-list article > span {
@@ -1790,8 +1871,14 @@ select:focus-visible {
 
   .result-record,
   .result-kpis,
-  .result-method {
+  .result-method,
+  .selection-content {
     grid-template-columns: 1fr;
+  }
+
+  .selection-content > div:first-child {
+    border-right: 0;
+    border-bottom: 1px solid var(--black);
   }
 
   .result-record-meta {
