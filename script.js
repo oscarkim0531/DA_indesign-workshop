@@ -1,9 +1,8 @@
 (() => {
-  const TASK_KEY = "da-indesign-project-current-tasks-v1";
+  const TASK_KEY = "da-indesign-project-current-tasks-v2";
   const NOTE_KEY = "da-indesign-project-notes-v1";
   const LOG_KEY = "da-indesign-project-logs-v1";
   const LEGACY_KEYS = {
-    [TASK_KEY]: "da-work01-tasks-v1",
     [NOTE_KEY]: "da-work01-notes-v1",
     [LOG_KEY]: "da-work01-logs-v1",
   };
