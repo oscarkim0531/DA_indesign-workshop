@@ -162,7 +162,7 @@
         logList.insertBefore(article, logList.querySelector(".log-seed"));
       });
 
-    if (logCount) logCount.textContent = String(logs.length + 7);
+    if (logCount) logCount.textContent = String(logs.length + 8);
   };
 
   archiveForm?.addEventListener("submit", (event) => {
@@ -194,6 +194,7 @@
       "[DECISION] 2026.08.09 — 데이터 원칙과 핵심 질문 확정\n익명화·삭제 기록 분리·미디어 수량 처리·민감 정보 비노출 원칙을 정하고, ‘한 학년 동안 공지방에 온 학과 공지는 어떤 규칙이 있을까?’를 핵심 질문으로 확정했다.",
       "[RESULT] 2026.08.09 — 원고 Ver.01 작성\n선택한 8개 분석을 지속·조합·이동·집중의 네 가지 규칙으로 구성해, 들어가며와 나가며를 갖춘 첫 원고를 완성했다.",
       "[REVISION] 2026.08.10 — 원고 Ver.01.01 수정\n작업 과정 설명과 발신자 중심 분석을 덜어내고, 학사 구간·콘텐츠 구성·이모지 353종·핵심 행동어를 네 가지 패턴의 줄글 본문과 별도 그래픽 자료로 다시 구성했다.",
+      "[TITLE] 2026.08.10 — A School Year in the Inbox\n한 학년 동안 여러 종류의 공지가 한곳에 축적된 공동의 수신함이라는 관점을 포괄하는 영문 제목으로 확정했다.",
     ];
     const userLogs = logs.map(
       (log) => `[${log.type}] ${formatDate(log.createdAt)} — ${log.title}\n${log.note}`,
