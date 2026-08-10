@@ -162,7 +162,7 @@
         logList.insertBefore(article, logList.querySelector(".log-seed"));
       });
 
-    if (logCount) logCount.textContent = String(logs.length + 5);
+    if (logCount) logCount.textContent = String(logs.length + 6);
   };
 
   archiveForm?.addEventListener("submit", (event) => {
@@ -192,6 +192,7 @@
       "[RESULT] 2026.08.09 — 20가지 분석·통계 도출\n공지의 크기, 편집 문법, 시간, 발신자 차이를 네 개의 대제목과 20개의 검산 가능한 분석으로 구조화했다.",
       "[DECISION] 2026.08.09 — 핵심 분석 8개와 분석 관점 확정\n01·02·07·08·09·13·17·18을 선택하고, 공지방을 학교생활을 운영한 작은 정보 유통 시스템으로 분석하기로 했다.",
       "[DECISION] 2026.08.09 — 데이터 원칙과 핵심 질문 확정\n익명화·삭제 기록 분리·미디어 수량 처리·민감 정보 비노출 원칙을 정하고, ‘한 학년 동안 공지방에 온 학과 공지는 어떤 규칙이 있을까?’를 핵심 질문으로 확정했다.",
+      "[RESULT] 2026.08.09 — 원고 Ver.01 작성\n선택한 8개 분석을 지속·조합·이동·집중의 네 가지 규칙으로 구성해, 들어가며와 나가며를 갖춘 첫 원고를 완성했다.",
     ];
     const userLogs = logs.map(
       (log) => `[${log.type}] ${formatDate(log.createdAt)} — ${log.title}\n${log.note}`,

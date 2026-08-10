@@ -2153,3 +2153,514 @@ select:focus-visible {
     min-height: auto;
   }
 }
+
+/* 한글 장문을 기준으로 다시 정리한 화면 체계 */
+:root {
+  --black: #111111;
+  --ink: #1d1d1b;
+  --gray-700: #5f5f5a;
+  --gray-500: #8d8d87;
+  --gray-300: #cdcdc7;
+  --gray-200: #e1e1dc;
+  --gray-100: #efefeb;
+  --paper: #f6f6f2;
+  --sidebar: 232px;
+  --pad: clamp(26px, 5.2vw, 76px);
+  --display: "Pretendard", "SUIT", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+  --mono: "Pretendard", "SUIT", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+}
+
+body {
+  background: var(--paper);
+  font-size: 16px;
+  line-height: 1.72;
+  letter-spacing: -0.012em;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.sidebar {
+  padding: 30px 24px;
+  background: #111;
+}
+
+.wordmark {
+  font-size: 14px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.phase-stamp {
+  margin: 44px 0 28px;
+}
+
+.phase-stamp span,
+.phase-stamp strong,
+.side-nav a,
+.sidebar-footer p,
+.sidebar-footer span {
+  letter-spacing: 0;
+}
+
+.phase-stamp span,
+.sidebar-footer p,
+.sidebar-footer span {
+  font-size: 11px;
+}
+
+.side-nav a {
+  grid-template-columns: 32px 1fr;
+  padding: 8px 0;
+  color: #a2a2a2;
+  font-size: 13px;
+}
+
+.side-nav a span {
+  font-size: 10px;
+}
+
+.section {
+  padding-top: clamp(72px, 8vw, 112px);
+  padding-bottom: clamp(72px, 8vw, 112px);
+}
+
+.section-kicker {
+  font-size: 11px;
+  letter-spacing: 0;
+}
+
+.hero {
+  min-height: auto;
+  padding-top: 30px;
+  background: var(--paper);
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.72fr);
+  gap: clamp(44px, 7vw, 92px);
+  align-items: center;
+  margin: clamp(64px, 9vw, 104px) 0;
+}
+
+.eyebrow {
+  margin-bottom: 14px;
+  font-size: 11px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin-bottom: 28px;
+  font-size: clamp(46px, 6.5vw, 86px);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.047em;
+}
+
+.hero-description {
+  max-width: 660px;
+  font-size: 17px;
+  line-height: 1.82;
+}
+
+.button,
+.countdown-head,
+.countdown span,
+.deadline-note span,
+.deadline-note small,
+.progress-copy span,
+.progress-board p,
+.card-label,
+.brief-cell > span,
+.phase-title span,
+.phase-status,
+.deliverable span,
+.schedule-date span,
+.schedule-output span,
+.schedule-main > div span,
+.archive-rules span,
+.archive-rules strong,
+.final-callout span {
+  font-size: 11px;
+  letter-spacing: 0;
+}
+
+.section-heading {
+  align-items: start;
+  margin-bottom: clamp(38px, 5vw, 64px);
+}
+
+.section-heading h2 {
+  font-size: clamp(34px, 4.4vw, 56px);
+  font-weight: 650;
+  line-height: 1.16;
+  letter-spacing: -0.04em;
+}
+
+.section-intro {
+  max-width: 440px;
+  padding-top: 22px;
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.journey-status > div {
+  min-height: 104px;
+}
+
+.journey-status span,
+.milestone-copy > div,
+.update-policy > span {
+  font-size: 11px;
+  letter-spacing: 0;
+}
+
+.journey-status strong {
+  font-size: clamp(17px, 1.6vw, 22px);
+}
+
+.milestone-copy {
+  min-height: 164px;
+}
+
+.milestone-copy h3 {
+  margin-top: 20px;
+  font-size: clamp(22px, 2.3vw, 32px);
+  line-height: 1.24;
+  letter-spacing: -0.03em;
+}
+
+.focus-card {
+  min-height: 410px;
+}
+
+.focus-number {
+  margin: auto 0 24px;
+  font-size: clamp(64px, 8vw, 104px);
+  line-height: .82;
+  letter-spacing: -0.05em;
+}
+
+.focus-card h3 {
+  font-size: clamp(27px, 3vw, 38px);
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+
+.task-row strong {
+  font-size: 15px;
+}
+
+.task-row small {
+  font-size: 12px;
+}
+
+.brief-cell {
+  min-height: 220px;
+}
+
+.brief-cell strong {
+  font-size: clamp(26px, 2.6vw, 38px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.brief-cell p,
+.phase-content > p,
+.analysis-list p {
+  font-size: 14px;
+  line-height: 1.78;
+}
+
+.principle-banner blockquote {
+  font-size: clamp(25px, 3.2vw, 42px);
+  line-height: 1.42;
+  letter-spacing: -0.03em;
+}
+
+.phase-card {
+  grid-template-columns: 140px 1fr;
+}
+
+.phase-index strong {
+  font-size: 56px;
+  letter-spacing: -0.04em;
+}
+
+.phase-title h3 {
+  font-size: clamp(25px, 2.7vw, 36px);
+  line-height: 1.26;
+  letter-spacing: -0.035em;
+}
+
+.condition-grid {
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+.result-record-copy h3 {
+  font-size: clamp(31px, 4vw, 52px);
+  line-height: 1.18;
+  letter-spacing: -0.04em;
+}
+
+.core-question h3 {
+  font-size: clamp(32px, 4.6vw, 60px);
+  line-height: 1.18;
+  letter-spacing: -0.043em;
+}
+
+.selection-perspective blockquote {
+  font-size: clamp(18px, 1.8vw, 24px);
+  line-height: 1.72;
+  letter-spacing: -0.018em;
+}
+
+.analysis-list article.is-selected h3::after {
+  content: "원고 선택";
+  font-size: 9px;
+  letter-spacing: 0;
+}
+
+.result-group summary > strong {
+  font-size: clamp(20px, 2vw, 27px);
+  letter-spacing: -0.02em;
+}
+
+.analysis-list h3 {
+  font-size: clamp(19px, 1.8vw, 25px);
+  line-height: 1.36;
+}
+
+.data-policy-list p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.manuscript-section {
+  background: #f1f1ed;
+}
+
+.manuscript-cover {
+  max-width: 980px;
+  margin: 0 auto 36px;
+  padding: clamp(34px, 6vw, 76px);
+  color: var(--white);
+  background: var(--black);
+}
+
+.manuscript-cover-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #454545;
+  color: #aaa;
+  font-size: 12px;
+}
+
+.manuscript-cover > p {
+  margin: clamp(52px, 8vw, 94px) 0 8px;
+  color: #aaa;
+  font-size: 12px;
+}
+
+.manuscript-cover h3 {
+  margin-bottom: 28px;
+  font-size: clamp(46px, 7vw, 88px);
+  font-weight: 650;
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+}
+
+.manuscript-cover blockquote {
+  max-width: 680px;
+  margin-bottom: clamp(52px, 8vw, 94px);
+  color: #d0d0cb;
+  font-size: clamp(20px, 2.3vw, 28px);
+  line-height: 1.58;
+}
+
+.manuscript-cover-note {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #454545;
+  color: #aaa;
+  font-size: 12px;
+}
+
+.manuscript-cover-note p {
+  margin: 0;
+}
+
+.manuscript-toggles {
+  max-width: 980px;
+  margin: 0 auto;
+  border-top: 1px solid var(--black);
+}
+
+.manuscript-chapter {
+  border-bottom: 1px solid var(--black);
+}
+
+.manuscript-chapter summary {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr) 24px;
+  gap: 22px;
+  align-items: center;
+  min-height: 92px;
+  padding: 20px 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.manuscript-chapter summary::-webkit-details-marker {
+  display: none;
+}
+
+.manuscript-chapter summary::after {
+  content: "+";
+  font-size: 22px;
+  text-align: right;
+}
+
+.manuscript-chapter[open] summary::after {
+  content: "−";
+}
+
+.manuscript-chapter summary span {
+  color: var(--gray-500);
+  font-size: 12px;
+}
+
+.manuscript-chapter summary strong {
+  font-size: clamp(20px, 2.2vw, 29px);
+  font-weight: 650;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+
+.manuscript-body {
+  max-width: 790px;
+  margin: 0 auto;
+  padding: 18px 0 74px;
+}
+
+.manuscript-body p {
+  margin-bottom: 1.15em;
+  font-size: 17px;
+  line-height: 1.94;
+  letter-spacing: -0.012em;
+}
+
+.manuscript-body h4 {
+  margin: 56px 0 18px;
+  font-size: clamp(23px, 2.6vw, 32px);
+  font-weight: 650;
+  line-height: 1.35;
+  letter-spacing: -0.03em;
+}
+
+.manuscript-body h4:first-child {
+  margin-top: 12px;
+}
+
+.manuscript-table-wrap {
+  margin: 28px 0 34px;
+  overflow-x: auto;
+  border-top: 1px solid var(--black);
+}
+
+.manuscript-table-wrap table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.manuscript-table-wrap th,
+.manuscript-table-wrap td {
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--gray-300);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.manuscript-table-wrap th {
+  color: var(--gray-700);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.manuscript-rule {
+  margin-top: 34px;
+  padding: 22px 0 0;
+  border-top: 2px solid var(--black);
+  font-weight: 650;
+}
+
+.manuscript-conclusion {
+  margin: 38px 0;
+  padding: 30px 0;
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+  font-size: clamp(22px, 2.8vw, 34px);
+  font-weight: 600;
+  line-height: 1.55;
+  letter-spacing: -0.03em;
+}
+
+.manuscript-review-note {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 28px;
+  max-width: 980px;
+  margin: 34px auto 0;
+  padding: 24px 0;
+  border-top: 1px solid var(--gray-300);
+  border-bottom: 1px solid var(--gray-300);
+  font-size: 13px;
+}
+
+.manuscript-review-note p {
+  margin: 0;
+}
+
+.schedule-main h3 {
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+.final-callout h3 {
+  font-size: clamp(30px, 3.5vw, 48px);
+  letter-spacing: -0.04em;
+}
+
+@media (max-width: 1180px) {
+  :root { --sidebar: 210px; }
+  .hero-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  :root { --sidebar: 0px; }
+  .section-intro { padding-top: 0; }
+  .manuscript-body { padding-right: 28px; padding-left: 28px; }
+}
+
+@media (max-width: 640px) {
+  body { word-break: keep-all; }
+  .section { padding-top: 64px; padding-bottom: 64px; }
+  .hero h1 { font-size: clamp(42px, 13vw, 62px); }
+  .section-heading h2 { font-size: 36px; }
+  .manuscript-cover { padding: 30px 24px; }
+  .manuscript-cover-meta { display: grid; gap: 2px; }
+  .manuscript-cover h3 { font-size: 50px; }
+  .manuscript-cover-note,
+  .manuscript-review-note { grid-template-columns: 1fr; gap: 8px; }
+  .manuscript-chapter summary { grid-template-columns: 68px minmax(0, 1fr) 18px; gap: 10px; }
+  .manuscript-body { padding: 14px 0 54px; }
+  .manuscript-body p { font-size: 16px; line-height: 1.88; }
+}
