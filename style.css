@@ -2779,3 +2779,293 @@ body {
   .action-donut { width: 210px; box-shadow: inset 0 0 0 46px var(--white); }
   .emoji-wall { font-size: 22px !important; }
 }
+
+.print-cover {
+  display: none;
+}
+
+.source-download {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: end;
+  margin-top: 32px;
+  padding: 28px;
+  border: 1px solid var(--black);
+  background: var(--white);
+}
+
+.source-download span,
+.tone-record > div > span {
+  color: var(--gray-500);
+  font-size: 11px;
+}
+
+.source-download h3,
+.tone-record h3 {
+  margin: 5px 0 8px;
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.35;
+  letter-spacing: -0.03em;
+}
+
+.source-download p {
+  max-width: 680px;
+  margin: 0;
+  color: var(--gray-700);
+  font-size: 13px;
+}
+
+.source-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.button-outline {
+  color: var(--black);
+  border-color: var(--black);
+  background: transparent;
+}
+
+.button-outline:hover,
+.button-outline:focus-visible {
+  color: var(--white);
+  background: var(--black);
+}
+
+.tone-record {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(320px, 1.1fr);
+  gap: clamp(30px, 6vw, 80px);
+  max-width: 980px;
+  margin: 0 auto 36px;
+  padding: 28px 0;
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+}
+
+.tone-record p {
+  margin: 0;
+  color: var(--gray-700);
+  font-size: 14px;
+}
+
+.tone-record ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tone-record li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--gray-300);
+  font-size: 14px;
+}
+
+.tone-record li:first-child {
+  border-top: 1px solid var(--gray-300);
+}
+
+.tone-record li strong {
+  color: var(--gray-500);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+@media (max-width: 760px) {
+  .source-download,
+  .tone-record {
+    grid-template-columns: 1fr;
+  }
+
+  .source-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+
+  body.print-work01 {
+    color: #111 !important;
+    background: #fff !important;
+    font-family: "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif !important;
+    font-size: 10pt;
+    line-height: 1.55;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body.print-work01 main {
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  body.print-work01 main > * {
+    display: none !important;
+  }
+
+  body.print-work01 main > [data-work01-print] {
+    display: block !important;
+  }
+
+  body.print-work01 .print-cover {
+    min-height: 257mm;
+    padding: 16mm 8mm;
+    border: 1px solid #111;
+    break-after: page;
+  }
+
+  body.print-work01 .print-cover p {
+    margin: 0 0 68mm;
+    font-size: 8pt;
+    letter-spacing: .08em;
+  }
+
+  body.print-work01 .print-cover h1 {
+    max-width: 150mm;
+    margin: 0 0 8mm;
+    font-size: 40pt;
+    line-height: 1.08;
+    letter-spacing: -.04em;
+  }
+
+  body.print-work01 .print-cover strong,
+  body.print-work01 .print-cover span {
+    display: block;
+    margin-top: 3mm;
+  }
+
+  body.print-work01 .section {
+    padding: 0 !important;
+    background: #fff !important;
+    break-before: page;
+    break-inside: auto !important;
+  }
+
+  body.print-work01 .section-heading {
+    margin-bottom: 10mm;
+    padding-bottom: 5mm;
+    border-bottom: 1px solid #111;
+  }
+
+  body.print-work01 .section-heading h2 {
+    font-size: 25pt;
+  }
+
+  body.print-work01 .section-intro {
+    max-width: 78mm;
+    font-size: 9pt;
+  }
+
+  body.print-work01 .source-actions,
+  body.print-work01 button,
+  body.print-work01 .button,
+  body.print-work01 .archive-form,
+  body.print-work01 textarea {
+    display: none !important;
+  }
+
+  body.print-work01 .source-download,
+  body.print-work01 .tone-record {
+    grid-template-columns: 1fr;
+    padding: 6mm 0;
+    background: #fff !important;
+  }
+
+  body.print-work01 .brief-cell,
+  body.print-work01 .result-record,
+  body.print-work01 .manuscript-figure,
+  body.print-work01 .phase-index,
+  body.print-work01 .phase-content,
+  body.print-work01 .manuscript-cover {
+    color: #111 !important;
+    background: #fff !important;
+  }
+
+  body.print-work01 .brief-cell,
+  body.print-work01 .analysis-list article,
+  body.print-work01 .phase-card,
+  body.print-work01 .manuscript-figure,
+  body.print-work01 table {
+    break-inside: avoid;
+  }
+
+  body.print-work01 .phase-card {
+    grid-template-columns: 28mm minmax(0, 1fr);
+  }
+
+  body.print-work01 .phase-content,
+  body.print-work01 .phase-index {
+    border-color: #999 !important;
+  }
+
+  body.print-work01 .phase-title,
+  body.print-work01 .phase-tasks,
+  body.print-work01 .deliverable,
+  body.print-work01 .tone-examples {
+    color: #111 !important;
+  }
+
+  body.print-work01 details > summary::after {
+    display: none !important;
+  }
+
+  body.print-work01 .manuscript-cover {
+    max-width: none;
+    padding: 12mm 8mm;
+    border: 1px solid #111;
+  }
+
+  body.print-work01 .manuscript-cover h3 {
+    font-size: 39pt;
+  }
+
+  body.print-work01 .manuscript-cover blockquote,
+  body.print-work01 .manuscript-cover-meta,
+  body.print-work01 .manuscript-cover-note {
+    color: #333 !important;
+    border-color: #777 !important;
+  }
+
+  body.print-work01 .manuscript-body {
+    max-width: none;
+    padding: 4mm 0 12mm;
+  }
+
+  body.print-work01 .manuscript-body p {
+    font-size: 10pt;
+    line-height: 1.7;
+  }
+
+  body.print-work01 .manuscript-table-wrap {
+    overflow: visible;
+  }
+
+  body.print-work01 .manuscript-table-wrap table {
+    min-width: 0;
+    font-size: 8.5pt;
+  }
+
+  body.print-work01 .action-chart-layout {
+    grid-template-columns: 52mm minmax(0, 1fr);
+  }
+
+  body.print-work01 .action-donut {
+    width: 46mm;
+    box-shadow: inset 0 0 0 10mm #fff;
+  }
+
+  body.print-work01 .emoji-wall {
+    font-size: 14pt !important;
+    line-height: 1.65 !important;
+  }
+}

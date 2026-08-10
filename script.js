@@ -162,7 +162,7 @@
         logList.insertBefore(article, logList.querySelector(".log-seed"));
       });
 
-    if (logCount) logCount.textContent = String(logs.length + 8);
+    if (logCount) logCount.textContent = String(logs.length + 11);
   };
 
   archiveForm?.addEventListener("submit", (event) => {
@@ -195,6 +195,9 @@
       "[RESULT] 2026.08.09 — 원고 Ver.01 작성\n선택한 8개 분석을 지속·조합·이동·집중의 네 가지 규칙으로 구성해, 들어가며와 나가며를 갖춘 첫 원고를 완성했다.",
       "[REVISION] 2026.08.10 — 원고 Ver.01.01 수정\n작업 과정 설명과 발신자 중심 분석을 덜어내고, 학사 구간·콘텐츠 구성·이모지 353종·핵심 행동어를 네 가지 패턴의 줄글 본문과 별도 그래픽 자료로 다시 구성했다.",
       "[TITLE] 2026.08.10 — A School Year in the Inbox\n한 학년 동안 여러 종류의 공지가 한곳에 축적된 공동의 수신함이라는 관점을 포괄하는 영문 제목으로 확정했다.",
+      "[TONE] 2026.08.10 — 건조한 관찰 보고서 톤 확정\n수치를 먼저 제시하고 해석은 한 걸음 물러서며, 공지 원문의 강한 시각언어와 차분한 본문의 대비를 활용하기로 했다.",
+      "[CHECK] 2026.08.10 — 원고·수치·개인정보 최종 점검\n핵심 통계를 대표 CSV와 다시 대조하고, 본문에서 실제 이름·연락처·원문 링크가 드러나지 않는지 확인했다.",
+      "[DELIVERABLE] 2026.08.10 — 웹 제출본과 Work 01 인쇄 기능 준비\n개인용 원본 CSV 다운로드와 Work 01 전용 인쇄·PDF 저장 기능을 추가하고, 웹사이트를 주 제출 문서로 정했다.",
     ];
     const userLogs = logs.map(
       (log) => `[${log.type}] ${formatDate(log.createdAt)} — ${log.title}\n${log.note}`,
@@ -209,7 +212,33 @@
     URL.revokeObjectURL(url);
   });
 
-  document.querySelector("[data-print-page]")?.addEventListener("click", () => window.print());
+  let printOpenStates = [];
+  const clearPrintMode = () => {
+    if (!document.body.classList.contains("print-work01")) return;
+    printOpenStates.forEach(({ details, wasOpen }) => {
+      details.open = wasOpen;
+    });
+    printOpenStates = [];
+    document.body.classList.remove("print-work01");
+  };
+
+  const printWork01 = () => {
+    printOpenStates = [...document.querySelectorAll("[data-work01-print] details")].map((details) => ({
+      details,
+      wasOpen: details.open,
+    }));
+    printOpenStates.forEach(({ details }) => {
+      details.open = true;
+    });
+    document.body.classList.add("print-work01");
+    window.print();
+    window.setTimeout(clearPrintMode, 1000);
+  };
+
+  document.querySelectorAll("[data-print-work01]").forEach((button) => {
+    button.addEventListener("click", printWork01);
+  });
+  window.addEventListener("afterprint", clearPrintMode);
 
   const navLinks = [...document.querySelectorAll(".side-nav a")];
   const sections = navLinks
