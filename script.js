@@ -162,7 +162,7 @@
         logList.insertBefore(article, logList.querySelector(".log-seed"));
       });
 
-    if (logCount) logCount.textContent = String(logs.length + 11);
+    if (logCount) logCount.textContent = String(logs.length + 12);
   };
 
   archiveForm?.addEventListener("submit", (event) => {
@@ -198,6 +198,7 @@
       "[TONE] 2026.08.10 — 건조한 관찰 보고서 톤 확정\n수치를 먼저 제시하고 해석은 한 걸음 물러서며, 공지 원문의 강한 시각언어와 차분한 본문의 대비를 활용하기로 했다.",
       "[CHECK] 2026.08.10 — 원고·수치·개인정보 최종 점검\n핵심 통계를 대표 CSV와 다시 대조하고, 본문에서 실제 이름·연락처·원문 링크가 드러나지 않는지 확인했다.",
       "[DELIVERABLE] 2026.08.10 — 웹 제출본과 Work 01 인쇄 기능 준비\n개인용 원본 CSV 다운로드와 Work 01 전용 인쇄·PDF 저장 기능을 추가하고, 웹사이트를 주 제출 문서로 정했다.",
+      "[PLAN] 2026.08.10 — 내지 20페이지 구성과 그래픽 방향 확정\n속표지부터 캡션까지 여덟 개의 페이지 묶음을 정하고, 전구·기간별 밀도·콘텐츠 비율·이모지 벽·행동어·링크 화면의 그래픽 역할을 함께 기록했다.",
     ];
     const userLogs = logs.map(
       (log) => `[${log.type}] ${formatDate(log.createdAt)} — ${log.title}\n${log.note}`,
