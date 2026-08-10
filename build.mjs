@@ -4,13 +4,6 @@ import { fileURLToPath } from "node:url";
 
 const projectDir = path.dirname(fileURLToPath(import.meta.url));
 const outputDir = path.join(projectDir, "dist", "server");
-const work01Dir = path.join(projectDir, "..", "Work 01");
-const work01Files = await fs.readdir(work01Dir);
-const sourceCsvName = work01Files.find((filename) => filename.endsWith("_edit.csv"));
-
-if (!sourceCsvName) {
-  throw new Error("Work 01 source CSV was not found.");
-}
 
 const sourceAssets = [
   ["/", path.join(projectDir, "index.html"), "text/html; charset=utf-8", "utf8"],
@@ -18,14 +11,13 @@ const sourceAssets = [
   ["/style.css", path.join(projectDir, "style.css"), "text/css; charset=utf-8", "utf8"],
   ["/script.js", path.join(projectDir, "script.js"), "text/javascript; charset=utf-8", "utf8"],
   ["/og.png", path.join(projectDir, "public", "og.png"), "image/png", "base64"],
-  ["/data/work01-source.csv", path.join(work01Dir, sourceCsvName), "text/csv; charset=utf-8", "utf8", "2025_홍익시디_2학년_공지방_edit.csv"],
 ];
 
 const assets = [];
-for (const [route, filename, contentType, encoding, downloadName = ""] of sourceAssets) {
+for (const [route, filename, contentType, encoding] of sourceAssets) {
   assets.push([
     route,
-    [await fs.readFile(filename, encoding), contentType, encoding, downloadName],
+    [await fs.readFile(filename, encoding), contentType, encoding],
   ]);
 }
 
@@ -43,7 +35,7 @@ export default {
       });
     }
 
-    const [sourceBody, contentType, encoding, downloadName] = asset;
+    const [sourceBody, contentType, encoding] = asset;
     const body = encoding === "base64"
       ? Uint8Array.from(atob(sourceBody), (character) => character.charCodeAt(0))
       : contentType.startsWith("text/html")
@@ -56,9 +48,6 @@ export default {
         : "private, max-age=3600",
       "x-content-type-options": "nosniff",
     };
-    if (downloadName) {
-      headers["content-disposition"] = "attachment; filename*=UTF-8''" + encodeURIComponent(downloadName);
-    }
     return new Response(request.method === "HEAD" ? null : body, {
       status: 200,
       headers,
