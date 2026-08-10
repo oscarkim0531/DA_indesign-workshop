@@ -162,7 +162,7 @@
         logList.insertBefore(article, logList.querySelector(".log-seed"));
       });
 
-    if (logCount) logCount.textContent = String(logs.length + 6);
+    if (logCount) logCount.textContent = String(logs.length + 7);
   };
 
   archiveForm?.addEventListener("submit", (event) => {
@@ -193,6 +193,7 @@
       "[DECISION] 2026.08.09 — 핵심 분석 8개와 분석 관점 확정\n01·02·07·08·09·13·17·18을 선택하고, 공지방을 학교생활을 운영한 작은 정보 유통 시스템으로 분석하기로 했다.",
       "[DECISION] 2026.08.09 — 데이터 원칙과 핵심 질문 확정\n익명화·삭제 기록 분리·미디어 수량 처리·민감 정보 비노출 원칙을 정하고, ‘한 학년 동안 공지방에 온 학과 공지는 어떤 규칙이 있을까?’를 핵심 질문으로 확정했다.",
       "[RESULT] 2026.08.09 — 원고 Ver.01 작성\n선택한 8개 분석을 지속·조합·이동·집중의 네 가지 규칙으로 구성해, 들어가며와 나가며를 갖춘 첫 원고를 완성했다.",
+      "[REVISION] 2026.08.10 — 원고 Ver.01.01 수정\n작업 과정 설명과 발신자 중심 분석을 덜어내고, 학사 구간·콘텐츠 구성·이모지 353종·핵심 행동어를 네 가지 패턴의 줄글 본문과 별도 그래픽 자료로 다시 구성했다.",
     ];
     const userLogs = logs.map(
       (log) => `[${log.type}] ${formatDate(log.createdAt)} — ${log.title}\n${log.note}`,

@@ -43,7 +43,7 @@
             <a href="#today"><span>02</span>현재 운영판</a>
             <a href="#work01"><span>03</span>Work 01</a>
             <a href="#analysis-results"><span>04</span>분석 결과</a>
-            <a href="#manuscript-v1"><span>05</span>원고 Ver.01</a>
+            <a href="#manuscript-v1"><span>05</span>원고 Ver.01.01</a>
             <a href="#schedule"><span>06</span>이번 일정</a>
             <a href="#archive"><span>07</span>프로젝트 기록</a>
             <a href="#done"><span>08</span>단계 완료 기준</a>
@@ -201,21 +201,21 @@
               <p class="eyebrow">02 / 오늘의 운영판</p>
               <h2>현재 단계 운영판</h2>
             </div>
-            <p class="section-intro">WORK 01 · 2026.08.10 월 · 원고 Ver.01을 읽고 편집 방향을 정하는 날</p>
+            <p class="section-intro">WORK 01 · 2026.08.10 월 · 원고 Ver.01.01을 확정하고 목소리를 정하는 날</p>
           </div>
 
           <div class="today-grid">
             <article class="focus-card inverse">
               <div class="card-label">오늘의 핵심 작업</div>
-              <p class="focus-number">02</p>
-              <h3>원고 Ver.01을 읽고 편집 표시하기</h3>
+              <p class="focus-number">03</p>
+              <h3>원고의 목소리와 제목 후보 좁히기</h3>
               <p>
-                초안을 완성본처럼 다듬기 전에 각 문단을 유지·삭제·추가 확인으로 나눈다.
-                통계로 확인된 사실과 그 사실에 대한 해석도 서로 다른 표시로 구분한다.
+                피드백을 반영한 Ver.01.01을 기준 원고로 잠그고, 자료의 건조한 수치와
+                공지 특유의 과잉된 시각언어를 어떤 말투로 보여줄지 결정한다.
               </p>
               <div class="focus-meta">
-                <span>예상 90분</span>
-                <span>산출물: Ver.01 검토 메모</span>
+                <span>예상 60분</span>
+                <span>산출물: 톤 정의문 + 제목 후보 3개</span>
               </div>
             </article>
 
@@ -235,15 +235,19 @@
               </label>
               <label class="task-row">
                 <input type="checkbox" data-task="question-confirmed" checked />
-                <span><strong>핵심 질문 확정</strong><small>공지에는 어떤 규칙이 있는가</small></span>
+                <span><strong>핵심 질문 수정</strong><small>공지에는 어떤 패턴이 있었는가</small></span>
               </label>
               <label class="task-row">
                 <input type="checkbox" data-task="draft-v1-complete" checked />
-                <span><strong>원고 Ver.01 작성</strong><small>네 가지 규칙으로 초안 구성</small></span>
+                <span><strong>원고 Ver.01 작성</strong><small>첫 번째 초안 구성</small></span>
               </label>
               <label class="task-row">
-                <input type="checkbox" data-task="draft-v1-review" />
-                <span><strong>초안 검토 표시</strong><small>유지·삭제·추가 확인으로 구분</small></span>
+                <input type="checkbox" data-task="draft-v10101-complete" checked />
+                <span><strong>원고 Ver.01.01 수정</strong><small>줄글 본문과 그래픽 자료 분리</small></span>
+              </label>
+              <label class="task-row">
+                <input type="checkbox" data-task="tone-and-title" />
+                <span><strong>톤과 제목 후보 결정</strong><small>말투 1개·제목 후보 3개</small></span>
               </label>
             </div>
           </div>
@@ -256,7 +260,7 @@
             <textarea
               id="workpad-note"
               data-persist-note="main-workpad"
-              placeholder="예: 규칙 2와 규칙 3의 설명이 겹친다. 링크 부분은 유지하고 행동 어휘는 더 짧게 줄이기."
+              placeholder="예: 건조한 통계 보고서의 말투를 유지하되, 공지 원문의 과한 이모지와 대비시키기."
             ></textarea>
             <small data-save-status aria-live="polite">이 브라우저에 자동 저장됩니다.</small>
           </div>
@@ -357,12 +361,12 @@
               </div>
             </article>
 
-            <article class="phase-card is-current">
+            <article class="phase-card is-complete">
               <div class="phase-index"><span>안내 단계 ③</span><strong>03</strong></div>
               <div class="phase-content">
                 <div class="phase-title">
                   <div><span>원고 재료 만들기</span><h3>AI로 원고 생성해 보기</h3></div>
-                  <span class="phase-status">진행 중</span>
+                  <span class="phase-status">완료</span>
                 </div>
                 <p>데이터를 한 번에 요약하지 말고, 분석 목적과 구조를 명시해 충분한 원고 재료를 확보한다.</p>
                 <div class="condition-grid" aria-label="첫 프롬프트 필수 조건">
@@ -380,19 +384,19 @@
                   <label><input type="checkbox" data-task="r3-perspective" checked /><span>핵심 분석 8개 선택 및 관점 확정</span></label>
                   <label><input type="checkbox" data-task="r3-manuscript-v1" checked /><span>원고 Ver.01 작성 및 아카이빙</span></label>
                   <label><input type="checkbox" data-task="r3-factcheck-final" checked /><span>선택 통계와 원본 대조 완료</span></label>
-                  <label><input type="checkbox" data-task="r3-review-v1" /><span>원고를 유지·삭제·추가 확인으로 검토</span></label>
-                  <label><input type="checkbox" data-task="r3-gap" /><span>부족한 목차·콘텐츠를 후속 작업으로 보완</span></label>
+                  <label><input type="checkbox" data-task="r3-review-v10101" checked /><span>원고를 유지·삭제·추가 확인으로 검토</span></label>
+                  <label><input type="checkbox" data-task="r3-content-v10101" checked /><span>학사 구간·행동어·이모지 콘텐츠 보완</span></label>
                 </div>
-                <div class="deliverable"><span>결과물</span><strong>원고 Ver.01 + 검토 메모</strong></div>
+                <div class="deliverable"><span>결과물</span><strong>원고 Ver.01.01 + 검토 기록</strong></div>
               </div>
             </article>
 
-            <article class="phase-card">
+            <article class="phase-card is-current">
               <div class="phase-index"><span>안내 단계 ④</span><strong>04</strong></div>
               <div class="phase-content">
                 <div class="phase-title">
                   <div><span>목소리 찾기</span><h3>원고의 특징 짚어내기</h3></div>
-                  <span class="phase-status">다음</span>
+                  <span class="phase-status">진행 중</span>
                 </div>
                 <p>자료의 공공적이고 반복적인 말투를 어떤 편집적 목소리로 보여줄지 결정한다.</p>
                 <div class="phase-tasks">
@@ -479,7 +483,7 @@
             <div><span>분석 대상 기록</span><strong>1,588</strong><p>날짜·발신자가 있는 분석 대상</p></div>
             <div><span>텍스트 / 미디어</span><strong>1,013 / 575</strong><p>텍스트와 미디어 표시의 구성</p></div>
             <div><span>텍스트 글자 수</span><strong>458,195</strong><p>텍스트 메시지에 쌓인 총 글자 수</p></div>
-            <div><span>이모지와 그림 기호</span><strong>4,023</strong><p>텍스트에서 확인된 그림 기호</p></div>
+            <div><span>이모지와 그림 기호</span><strong>4,233</strong><p>중복 제외 353종 · 재집계</p></div>
           </div>
 
           <article class="selection-record">
@@ -489,11 +493,11 @@
             </div>
             <div class="core-question">
               <p class="eyebrow">이 책이 답할 핵심 질문</p>
-              <h3>한 학년 동안 공지방에 온<br />학과 공지는 어떤 규칙이 있을까?</h3>
+              <h3>한 학년 동안 공지방에 온<br />학과 공지에는 어떤 패턴이 있었을까?</h3>
             </div>
             <div class="selection-content">
               <div>
-                <p class="eyebrow">선택한 분석 번호 · 8개</p>
+                <p class="eyebrow">초기 선택 분석 번호 · Ver.01</p>
                 <div class="selection-numbers" aria-label="선택한 분석 번호 01, 02, 07, 08, 09, 13, 17, 18">
                   <span>01</span><span>02</span><span>07</span><span>08</span>
                   <span>09</span><span>13</span><span>17</span><span>18</span>
@@ -502,10 +506,9 @@
               <div class="selection-perspective">
                 <p class="eyebrow">나의 분석 관점</p>
                 <blockquote>
-                  이 공지방을 단순한 정보 전달 채팅이 아니라, 2025년 학교생활을 운영한 작은 정보 유통 시스템으로 바라본다.
-                  299일간 이어진 공지는 텍스트·이미지·이모지를 조합해 신청과 제출 같은 행동을 유도하고, 수많은 링크를 통해
-                  구성원을 외부 정보로 이동시켰다. 특히 공지가 가을에 집중되고 생산이 소수 발신자에게 몰린 구조를 살펴보며,
-                  누가 언제 어떤 형식으로 학교의 시간을 조직했는지 분석한다.
+                  한 해의 공지를 공지량의 지속성, 학기와 방학에 따른 밀도, 텍스트·이미지·기호의 조합,
+                  신청과 제출을 요구하는 행동어와 링크의 흐름으로 읽는다. 이를 통해 공지방이 여러 출처의 정보를
+                  학생이 지금 해야 할 일로 어떻게 바꾸어 전달했는지 분석한다.
                 </blockquote>
               </div>
             </div>
@@ -519,10 +522,10 @@
             <ol class="data-policy-list">
               <li><span>01</span><p>실제 발신자 이름은 발신량 순서에 따라 <strong>A–M으로 익명화</strong>한다.</p></li>
               <li><span>02</span><p><strong>삭제·가림 메시지 37개</strong>는 날짜·시간·발신자 분석과 분리한다.</p></li>
-              <li><span>03</span><p>실제 이미지가 없는 ‘사진’, ‘사진 N장’, ‘동영상’ 표시는 <strong>미디어 수량으로만 활용</strong>한다.</p></li>
+              <li><span>03</span><p>‘사진’, ‘사진 N장’, ‘동영상’ 표시는 <strong>콘텐츠 유형별 수량으로 활용</strong>한다.</p></li>
               <li><span>04</span><p>개인 연락처와 외부 링크는 원고에 <strong>원문 그대로 노출하지 않는다.</strong></p></li>
               <li><span>05</span><p>발신 빈도를 개인의 <strong>성실성·권한·영향력으로 해석하지 않는다.</strong></p></li>
-              <li><span>06</span><p>계절별 차이는 학사 일정 등 근거를 추가로 확인하기 전까지 <strong>원인을 단정하지 않는다.</strong></p></li>
+              <li><span>06</span><p>학기·방학 구간별 공지량 차이는 콘텐츠를 추가로 확인하기 전까지 <strong>원인을 단정하지 않는다.</strong></p></li>
               <li><span>07</span><p>수치로 확인된 <strong>통계적 사실과 그에 대한 해석을 구분</strong>해 쓴다.</p></li>
             </ol>
           </article>
@@ -585,7 +588,7 @@
                   <span>09</span>
                   <div>
                     <h3>이모지는 장식보다 표지판에 가까웠다</h3>
-                    <p>텍스트 564개(55.7%)에서 총 4,023개의 이모지·그림 기호가 확인됐다. 이모지가 있는 메시지에는 평균 7.1개가 사용됐고, 상위 기호는 ❗ 434회, 📍 237회, ✨ 227회, ✅ 204회, 📌 176회였다.</p>
+                    <p>추출 기준을 이모지·그림기호 전체로 넓혀 다시 계산한 결과 총 4,233회, 중복 제외 353종이 확인됐다. 상위 기호는 ❗ 434회, 📍 237회, ✨ 227회, ✅ 204회, 📌 176회였다.</p>
                   </div>
                 </article>
                 <article>
@@ -668,7 +671,7 @@
 
           <div class="result-method">
             <span>분석 방법</span>
-            <p><strong>분석 단위</strong> 날짜·발신자가 있는 1,588개 기록. 텍스트 길이·줄바꿈·이모지는 미디어 표시를 제외한 1,013개 텍스트에서 계산했다.</p>
+            <p><strong>분석 단위</strong> 날짜·발신자가 있는 1,588개 기록. 콘텐츠 구성에서는 삭제·가림 37개를 더하고, 이모지·그림기호는 1,013개 텍스트에서 다시 계산했다.</p>
             <p><strong>해석 원칙</strong> 발신자 이름은 발신량 순서 A–M으로 익명화하고, 표본이 적은 인물의 비율은 성격이나 성실성으로 해석하지 않는다.</p>
           </div>
         </section>
@@ -677,103 +680,110 @@
           <div class="section-heading">
             <div>
               <p class="eyebrow">05 / WORK 01 · 원고 기록</p>
-              <h2>원고 Ver.01</h2>
+              <h2>원고 Ver.01.01</h2>
             </div>
-            <p class="section-intro">핵심 질문과 선택한 8개 분석을 네 가지 규칙으로 엮은 첫 번째 원고. 각 장을 열어 읽고 다음 편집 판단을 남긴다.</p>
+            <p class="section-intro">피드백을 반영해 작업 과정 설명을 덜어내고, 소책자에 바로 사용할 수 있는 2–4문단의 본문 블록과 별도의 도표 자료로 다시 구성했다.</p>
           </div>
 
           <article class="manuscript-cover">
             <div class="manuscript-cover-meta">
-              <span>2026.08.09 작성</span>
-              <span>초안 · 편집 전</span>
+              <span>2026.08.10 수정</span>
+              <span>1차 피드백 반영</span>
             </div>
             <p>가제</p>
-            <h3>공지의 규칙</h3>
-            <blockquote>한 학년 동안 공지방에 온 학과 공지는 어떤 규칙이 있을까?</blockquote>
+            <h3>공지방은 어떻게 작동하는가</h3>
+            <blockquote>한 학년 동안 공지방에 온 학과 공지에는 어떤 패턴이 있었을까?</blockquote>
             <div class="manuscript-cover-note">
               <span>구성</span>
-              <p>들어가며 · 규칙 1 지속 · 규칙 2 조합 · 규칙 3 이동 · 규칙 4 집중 · 나가며</p>
+              <p>들어가며 · 패턴 1 지속 · 패턴 2 학사 리듬 · 패턴 3 조합 · 패턴 4 행동 · 나가며</p>
             </div>
           </article>
 
           <div class="manuscript-toggles">
             <details class="manuscript-chapter" open>
-              <summary><span>들어가며</span><strong>공지방을 하나의 시스템으로 읽기</strong></summary>
+              <summary><span>들어가며</span><strong>한 해의 공지를 한곳에 펼쳐 보기</strong></summary>
               <div class="manuscript-body">
-                <p>학교 공지방에는 수업, 행사, 모집, 신청, 마감, 프로그램에 관한 정보가 끊임없이 도착한다. 대부분은 필요한 내용을 확인하고 지나가지만, 한 해의 기록을 모아 놓으면 공지가 전달되는 방식 자체가 하나의 패턴으로 보이기 시작한다.</p>
-                <p>이 원고는 홍익대학교 시각디자인전공 2학년 공지방에 2024년 12월 27일부터 2026년 1월 9일까지 쌓인 기록을 분석한다. 날짜와 발신자가 남아 있는 기록은 1,588개이며, 그중 1,542개가 2025년에 작성됐다. 따라서 이 자료는 사실상 한 학년의 2025년을 중심으로 읽을 수 있는 공지 연감에 가깝다.</p>
-                <p>다만 이 방은 친구들이 서로 대화를 주고받는 일반적인 채팅방이 아니다. 학교 조직이 한 학년에게 정보를 전달하는 방송형 기록이므로, 발신 횟수를 친밀도·성실성·권한으로 해석하지 않는다. 여기서는 공지가 얼마나 자주 반복됐는지, 글과 이미지·이모지·링크가 어떻게 결합됐는지, 읽은 사람에게 어떤 행동을 요구했는지, 공지 생산이 누구에게 집중됐는지를 살펴본다.</p>
-                <p>그 결과 네 가지 규칙이 보였다. 공지는 지속적으로 반복되고, 여러 형식을 조합하며, 링크를 통해 다음 행동을 요구하고, 소수의 발신자에 의해 집중적으로 생산된다.</p>
+                <p>학교 공지방에는 수업, 행사, 모집, 신청, 마감, 프로그램에 관한 정보가 끊임없이 도착한다. 평소에는 필요한 내용을 확인한 뒤 지나가지만, 한 해의 기록을 한곳에 모아 놓으면 개별 공지보다 공지가 이어지는 방식이 먼저 눈에 들어온다. 어떤 시기에는 메시지가 빠르게 쌓이고, 긴 텍스트 뒤에 이미지와 링크가 따라오며, 이모지와 기호는 중요하게 읽어야 할 부분을 표시한다.</p>
+                <p>1,588개의 날짜 기록과 37개의 삭제·가림 흔적을 함께 살펴보면 공지방은 단순한 보관함보다 계속 갱신되는 행동 목록에 가까웠다. 공지는 거의 매일 새로 도착했고, 학사 일정에 따라 밀도가 달라졌으며, 텍스트·이미지·기호·링크를 조합해 학생을 신청과 제출 같은 다음 단계로 이동시켰다. 이 원고는 그 안에서 반복해서 나타난 네 가지 패턴을 따라간다.</p>
               </div>
             </details>
 
             <details class="manuscript-chapter">
-              <summary><span>규칙 1</span><strong>공지는 반복될 때 시스템이 된다</strong></summary>
+              <summary><span>패턴 1</span><strong>379일 중 299일, 거의 매일 켜져 있던 방</strong></summary>
               <div class="manuscript-body">
-                <h4>379일 중 299일</h4>
-                <p>분석 기간 379일 가운데 공지가 올라온 날은 299일이었다. 전체 기간의 78.9%에 해당한다. 공지가 있었던 날에는 하루 평균 5.3개의 기록이 생성됐다. 이 숫자는 공지방이 특정 행사 때만 잠깐 작동한 것이 아니라, 학년의 일상을 따라 거의 매일 켜져 있던 전달 장치였다는 점을 보여준다.</p>
-                <p>하나의 안내가 항상 하나의 메시지로 끝난 것도 아니다. 설명 글 뒤에 이미지가 붙고, 신청 링크나 추가 안내가 다시 이어졌다. 반복되는 것은 공지의 주제만이 아니라 정보를 잘게 나누어 전달하는 방식이기도 했다.</p>
-                <h4>계절마다 달라지는 밀도</h4>
-                <div class="manuscript-table-wrap"><table><thead><tr><th>계절</th><th>기록 수</th><th>전체 비율</th><th>활동일 평균</th></tr></thead><tbody><tr><td>봄</td><td>409</td><td>25.8%</td><td>5.2</td></tr><tr><td>여름</td><td>375</td><td>23.6%</td><td>5.1</td></tr><tr><td>가을</td><td>534</td><td>33.6%</td><td>6.8</td></tr><tr><td>겨울</td><td>270</td><td>17.0%</td><td>4.0</td></tr></tbody></table></div>
-                <p>가을에는 기록 수와 활동일당 밀도가 모두 가장 높았다. 겨울은 두 수치가 가장 낮았다. 그러나 이 차이의 원인을 공모전, 학사 일정, 전시 준비 때문이라고 바로 단정할 수는 없다. 실제 학사 일정과 공지 내용을 추가로 비교하기 전까지 여기서 확인할 수 있는 사실은 계절마다 공지의 밀도가 달랐다는 점이다.</p>
-                <p class="manuscript-rule">첫 번째 규칙은 지속이다. 공지방은 반복해서 작동하며 한 학년의 시간을 촘촘하게 연결했다.</p>
+                <p>분석 기간 379일 가운데 공지가 올라온 날은 299일이었다. 전체 기간의 78.9%에 해당하며, 공지가 있던 날에는 하루 평균 5.3개의 기록이 생성됐다. 공지방은 특정 행사나 긴급한 일이 생겼을 때만 잠깐 열리는 게시판이 아니었다. 수업, 행사, 모집, 신청, 제출, 장학금, 설문조사처럼 서로 다른 정보가 학년의 일상을 따라 거의 매일 이어졌다.</p>
+                <p>이 수치에서 중요한 것은 같은 내용이 여러 번 게시됐다는 사실보다 공지해야 하는 상태 자체가 한 해 동안 지속됐다는 점이다. 학생이 매일 모든 공지를 자세히 읽지 않더라도 새로운 신청과 마감이 계속 도착한다는 상태는 사라지지 않았다. 공지방은 학교생활 옆에 늘 켜져 있는 정보의 층이었고, ‘오늘 확인해야 할 것’의 목록을 매일 새로 만들었다.</p>
+                <p class="manuscript-rule">공지가 반복된 것이 아니라, 공지해야 하는 상태가 한 해 동안 반복됐다.</p>
               </div>
             </details>
 
             <details class="manuscript-chapter">
-              <summary><span>규칙 2</span><strong>공지는 글 하나로 끝나지 않는다</strong></summary>
+              <summary><span>패턴 2</span><strong>학기와 방학에 따라 달라진 공지의 속도</strong></summary>
               <div class="manuscript-body">
-                <h4>텍스트 1,013개, 미디어 표시 575개</h4>
-                <div class="manuscript-table-wrap"><table><thead><tr><th>형식</th><th>기록 수</th><th>비율</th></tr></thead><tbody><tr><td>텍스트</td><td>1,013</td><td>63.8%</td></tr><tr><td>사진·동영상 등</td><td>575</td><td>36.2%</td></tr><tr><td>합계</td><td>1,588</td><td>100%</td></tr></tbody></table></div>
-                <p>날짜가 남은 기록 세 개 중 하나 이상은 텍스트가 아니라 사진이나 동영상 표시였다. 원본에는 실제 이미지가 없으므로 이미지의 내용이나 분위기는 분석할 수 없다. 다만 575개의 미디어 표시만으로도 공지가 글만으로 구성되지 않았다는 사실은 분명하다.</p>
-                <p>설명문, 포스터 이미지, 신청 링크가 차례로 이어지는 흐름은 채팅 안에 작은 편집 지면을 만든다. 공지를 보내는 사람은 한 화면 안에서 제목, 본문, 강조, 시각 자료, 이동 경로를 조합한다.</p>
-                <h4>장식이 아니라 표지판이 된 이모지</h4>
-                <p>텍스트 메시지 1,013개 중 564개, 55.7%에서 이모지와 그림 기호가 확인됐다. 이모지가 포함된 메시지 한 개에는 평균 7.1개의 기호가 사용됐다.</p>
-                <div class="manuscript-table-wrap"><table><thead><tr><th>기호</th><th>사용 횟수</th><th>주요 기능</th></tr></thead><tbody><tr><td>❗</td><td>434</td><td>주의·강조</td></tr><tr><td>📍</td><td>237</td><td>위치·항목</td></tr><tr><td>✨</td><td>227</td><td>주목·장식</td></tr><tr><td>✅</td><td>204</td><td>확인·체크</td></tr><tr><td>📌</td><td>176</td><td>핵심 정보</td></tr></tbody></table></div>
-                <p>가장 많이 쓰인 기호는 중요한 문장과 위치, 확인할 항목을 빠르게 찾게 한다. 이 방의 이모지는 감정을 표현하는 장식이라기보다 긴 공지를 읽게 만드는 편집 표지판에 가까웠다.</p>
-                <p class="manuscript-rule">두 번째 규칙은 조합이다. 공지는 글·이미지·기호를 함께 배치해 읽는 순서를 만든다.</p>
+                <p>같은 길이의 1학기와 2학기를 비교하면 공지의 속도 차이가 선명하다. 1학기에는 459개, 2학기에는 576개의 기록이 올라와 2학기가 117개, 약 25.5% 많았다. 특히 2학기 개강 직후 두 주에는 106개의 기록이 생성돼 개강 직전 두 주의 56개에서 거의 두 배로 늘었다. 학기가 바뀌는 순간 공지방의 갱신 속도도 함께 빨라졌다.</p>
+                <p>방학이라고 해서 공지방이 멈춘 것은 아니다. 여름방학에는 325개의 기록이 올라와 하루 평균 4.22개를 기록했고, 이는 1학기의 하루 평균 4.37개와 큰 차이가 없다. 수업이 쉬는 동안에도 행사와 모집, 다음 학기 준비가 계속되면서 공지방은 학기 중과 비슷한 밀도로 작동했다. 반면 겨울방학의 하루 평균은 2.48개로 비교적 낮아 학사 구간에 따라 공지의 리듬이 달라졌음을 보여준다.</p>
+                <p>이 차이만으로 특정 행사나 과제가 공지량을 늘렸다고 단정할 수는 없다. 그러나 계절 대신 실제 학교생활의 흐름으로 나누어 보면, 2학기와 개강 직후에 공지가 가장 빠르게 쌓였고 여름방학에도 전달 체계가 거의 쉬지 않았다는 점은 분명하다.</p>
+                <figure class="manuscript-figure">
+                  <figcaption><span>표 01</span><strong>학사 구간별 공지 밀도</strong></figcaption>
+                  <div class="manuscript-table-wrap"><table><thead><tr><th>학사 구간</th><th>공지 기록</th><th>하루 평균</th><th>공지가 있던 날</th></tr></thead><tbody><tr><td>1학기</td><td>459개</td><td>4.37개</td><td>84.8%</td></tr><tr><td>여름방학</td><td>325개</td><td>4.22개</td><td>81.8%</td></tr><tr><td>2학기</td><td>576개</td><td>5.49개</td><td>83.8%</td></tr><tr><td>겨울방학</td><td>228개</td><td>2.48개</td><td>64.1%</td></tr></tbody></table></div>
+                </figure>
               </div>
             </details>
 
             <details class="manuscript-chapter">
-              <summary><span>규칙 3</span><strong>공지는 읽은 사람에게 다음 행동을 요구한다</strong></summary>
+              <summary><span>패턴 3</span><strong>텍스트 한 덩어리가 아니라 조합된 화면</strong></summary>
               <div class="manuscript-body">
-                <h4>텍스트의 68.2%에 행동과 기한이 있었다</h4>
-                <p>텍스트 메시지 1,013개 가운데 691개에서 ‘마감’, ‘까지’, ‘기한’, ‘제출’, ‘신청’, ‘모집’, ‘선착순’, ‘오늘’, ‘내일’ 같은 어휘가 발견됐다. 공지의 상당수는 정보를 알려 주는 데서 멈추지 않고, 읽은 사람이 정해진 시간 안에 무언가를 하도록 요구했다.</p>
-                <h4>710개의 링크가 만든 이동 경로</h4>
-                <p>484개 메시지에 모두 710개의 URL이 포함됐다. 날짜가 있는 전체 기록의 30.5%가 링크를 포함한 셈이며, 링크가 있는 메시지에는 평균 1.47개의 URL이 있었다.</p>
-                <div class="manuscript-table-wrap"><table><thead><tr><th>목적지</th><th>URL 수</th><th>주요 역할</th></tr></thead><tbody><tr><td>Google Forms</td><td>220</td><td>신청·설문·접수</td></tr><tr><td>Google Docs</td><td>110</td><td>문서·자료 확인</td></tr><tr><td>Open Kakao</td><td>77</td><td>문의·참여</td></tr><tr><td>기타</td><td>303</td><td>홈페이지·SNS·영상</td></tr><tr><td>합계</td><td>710</td><td>—</td></tr></tbody></table></div>
-                <p>상위 세 목적지의 링크는 407개로 전체의 57.3%를 차지했다. 학생은 공지방에서 내용을 읽은 뒤 설문지, 문서, 문의방, 홈페이지로 이동한다. 공지방은 모든 정보를 담는 종착지가 아니라 외부 행동으로 연결하는 입구였다.</p>
-                <p class="manuscript-rule">세 번째 규칙은 이동이다. 공지는 링크와 기한의 언어를 이용해 읽기를 신청·제출·확인으로 바꾼다.</p>
+                <p>삭제·가림 기록까지 포함한 1,625개 항목은 텍스트 1,013개, 사진 표시 572개, 동영상 표시 3개, 삭제·가림 메시지 37개로 나뉜다. 전체의 35.2%가 사진 표시였다는 것은 공지의 상당 부분이 글만으로 전달되지 않았음을 보여준다. 설명문 뒤에 포스터 이미지가 붙고 다시 링크나 보충 설명이 이어지면서, 여러 메시지가 하나의 공지 묶음을 만들었다.</p>
+                <p>텍스트에서는 이모지와 그림기호가 4,233회 등장했으며, 중복을 제거하면 353종이었다. 가장 많이 사용된 ❗ 434회, 📍 237회, ✨ 227회, ✅ 204회, 📌 176회는 긴 글에서 주의할 문장과 위치, 확인 항목을 빠르게 찾게 했다. 반면 🌼, 💛, 🌊 같은 기호는 행사와 단체의 분위기를 만들었다. 공지의 이모지는 장식과 정보 구조 사이에서, 서로 다른 출처의 글을 카카오톡 안에서 읽을 수 있는 화면으로 바꾸었다.</p>
+                <p>결국 공지 하나는 텍스트 메시지 하나와 일치하지 않았다. 제목과 본문, 이미지, 강조 기호, 링크가 차례로 이어져 하나의 작은 편집 지면을 만들었고, 삭제된 메시지조차 모든 정보가 그대로 남아 있지는 않다는 흔적으로 포함됐다. 공지방의 형식은 정보를 저장하는 목록이 아니라 읽는 순서를 설계한 조합에 가까웠다.</p>
+                <figure class="manuscript-figure">
+                  <figcaption><span>표 02</span><strong>공지방의 콘텐츠 구성</strong></figcaption>
+                  <div class="manuscript-table-wrap"><table><thead><tr><th>콘텐츠 유형</th><th>기록 수</th><th>비율</th></tr></thead><tbody><tr><td>텍스트</td><td>1,013개</td><td>62.3%</td></tr><tr><td>사진 표시</td><td>572개</td><td>35.2%</td></tr><tr><td>동영상 표시</td><td>3개</td><td>0.2%</td></tr><tr><td>삭제·가림</td><td>37개</td><td>2.3%</td></tr><tr><td>합계</td><td>1,625개</td><td>100%</td></tr></tbody></table></div>
+                </figure>
+                <figure class="manuscript-figure">
+                  <figcaption><span>도판 01</span><strong>중복을 제거한 이모지·그림기호 353종</strong></figcaption>
+                  <details class="emoji-index">
+                    <summary>전체 이모지 인덱스 펼치기</summary>
+                    <p class="emoji-wall" aria-label="공지방에서 사용된 이모지와 그림기호 353종">❗ 📍 ✨ ✅ 📌 ✔ ‼ 📢 🌼 💛 🌊 🚨 ⭐ ▶ 🎁 👉 🔥 1⃣ 2⃣ ▪ ☘ 💙 ⚠ 💡 💥 🟡 🔗 💫 🍀 🎉 🎈 🎯 🔹 ☎ 🌀 📅 🔵 ♥ 🌷 🎨 👀 🩵 3⃣ ➡ 🍊 🗓 🪷 ⏱ 🌟 💚 ⚽ ☑ ✉ 🐮 🔅 📞 🤝 🧡 🙌 ⚫ 🍿 🎤 💜 🤩 🇰🇷 4⃣ ◀ 🤍 ▫ ✍ ❓ 🎡 📚 📸 🖤 🗳 ⏰ ⏳ 🎓 👥 💌 💝 📮 ♠ ♣ ♦ 🌞 🎮 🏆 🏛 🐯 👏 📘 📣 🖌 ☺ ✌ 🌌 💬 📝 🫧 ☁ 🌠 🌺 💭 💼 📄 🔍 🔸 😈 🙏 🚌 ☃ ☕ ⛓‍💥 ❤‍🔥 🃏 🌱 🎊 🏠 👇 💖 💪 🔆 🖼 🗞 ☀ ⚡ ✏ ❇ ➕ 🌾 🍪 🎋 🎖 🎬 🎶 🏄‍♀ 🐇 👍 💗 💰 🤗 🧧 🪩 🪵 🫀 🫶 😎 ✒ ✳ ✴ 🌳 🍔 🍕 🍗 🍷 🎆 🎟 🎥 🏡 🏢 🏫 👌 💃 💨 💸 📈 📧 🖊 🖋 🤷‍♀ 🥇 🥈 🥉 😊 🙆‍♂ 🛒 🛠 ♀ ⚾ ✂ ✋ ❄ ❤ 🌈 🌕 🌸 🌻 🍂 🍘 🍫 🍬 🏀 🏃‍♂ 🏅 🏰 🐖 👋 👑 👚 👩‍💻 👻 💻 📂 📆 📋 📎 📔 📖 📱 📿 🔎 🔮 🔱 🕌 🕕 🕵 🕺 🖥 🗺 🤎 🤓 🤔 🤷 🥰 🧑‍🌾 🧑‍🎓 🧑‍🎨 🧚🏻 🧠 🧦 🧬 🧶 🧾 🪄 🪑 🪡 🪦 🪬 🫠 😄 🙂 🙆‍♀ 🙋🏻‍♀ 🚩 🚫 🚭 🚮 🟩 ⁉ *⃣ ↔ ⏩ ☝ ✈ ❕ ⤴ ⬇ ⭕ 🌹 🍙 🍚 🍦 🍧 🍰 🍲 🍻 🎀 🎇 🎭 🏃 🏃🏻‍♀ 🏄 🏥 🏴 🏷 🏹 🏺 🐈 🐋 🐵 🐷 👈 👉🏻 👕 👗 👟 👤 👨‍🎨 👨‍🏫 👨‍💻 👨‍🚒 👶 👷‍♀ 💁 💁‍♀ 💕 💞 💦 📃 📕 📗 📙 📜 📦 📩 📲 📺 📽 🔁 🔓 🔔 🔭 🔶 🔷 🕖 🕗 🕘 🖍 🗣 🗯 🤠 🤦‍♀ 🤯 🤳 🥢 🥳 🥹 🥺 🦕 🧊 🧐 🧑 🧞 🧩 🧭 🧸 🩳 🪔 🫵 😆 😍 😗 😚 😻 🙅‍♀ 🙇‍♀ 🙇‍♂ 🙋 🙏🏻 🟠 5⃣</p>
+                  </details>
+                </figure>
               </div>
             </details>
 
             <details class="manuscript-chapter">
-              <summary><span>규칙 4</span><strong>공지는 소수의 발신자가 반복해서 만든다</strong></summary>
+              <summary><span>패턴 4</span><strong>‘신청’이라는 동사와 링크라는 버튼</strong></summary>
               <div class="manuscript-body">
-                <h4>상위 세 발신자가 전체의 73%를 보냈다</h4>
-                <p>실제 이름을 A–M으로 익명화한 뒤 발신량을 비교했다. A는 477개, B는 429개, C는 254개의 기록을 보냈다. 세 사람의 기록을 합치면 전체의 73.0%이고, 상위 다섯 명까지 넓히면 87.8%다.</p>
-                <div class="manuscript-table-wrap"><table><thead><tr><th>발신자</th><th>기록 수</th><th>비율</th></tr></thead><tbody><tr><td>A</td><td>477</td><td>30.0%</td></tr><tr><td>B</td><td>429</td><td>27.0%</td></tr><tr><td>C</td><td>254</td><td>16.0%</td></tr><tr><td>D</td><td>141</td><td>8.9%</td></tr><tr><td>E</td><td>94</td><td>5.9%</td></tr><tr><td>F</td><td>90</td><td>5.7%</td></tr><tr><td>G</td><td>44</td><td>2.8%</td></tr><tr><td>H</td><td>26</td><td>1.6%</td></tr></tbody></table></div>
-                <p>이 결과만으로 특정 사람이 더 성실하거나 더 큰 권한을 가졌다고 말할 수는 없다. 담당 업무와 공지 출처, 역할 분담이 확인되지 않았기 때문이다. 다만 모든 참여자가 비슷하게 말하는 대화형 방이 아니라, 소수의 발신자가 다수의 수신자에게 정보를 전달하는 집중형 구조였다는 점은 확인할 수 있다.</p>
-                <p>A–M이라는 표기는 개인의 이름을 지우기 위한 장치인 동시에, 관심을 개인의 성격에서 정보 생산 구조로 옮긴다. 발신자별로 긴 글과 이미지, 이모지의 배합이 달라졌는지는 이후 원고에서 더 확인할 수 있지만, 현재 단계에서는 빈도 차이를 구조적 사실로만 남긴다.</p>
-                <p class="manuscript-rule">네 번째 규칙은 집중이다. 한 학년의 공지는 소수의 발신자에게 모인 전달 역할을 통해 유지됐다.</p>
+                <p>일반적인 시간 표현을 제외하고 ‘마감’, ‘기한’, ‘제출’, ‘신청’, ‘모집’, ‘선착순’ 여섯 행동어를 다시 집계했다. 이 가운데 하나 이상이 포함된 텍스트는 569개로 전체 텍스트 1,013개의 56.2%였다. 공지 텍스트 두 개 중 하나 이상에는 무언가를 신청하거나 모집하고, 제출하거나 마감하는 말이 들어 있던 셈이다.</p>
+                <p>여섯 행동어는 모두 2,526회 등장했으며, ‘신청’이 1,286회로 절반이 넘는 50.9%를 차지했다. ‘모집’ 539회를 더하면 두 단어가 전체 행동어의 72.2%다. 공지방의 언어는 단순히 무언가가 끝난다는 경고보다 참여할 사람을 모으고 입구를 여는 말에 더 크게 기울어 있었다. 다만 그 입구에는 마감과 기한, 선착순이라는 닫히는 시간이 함께 붙었다.</p>
+                <p>484개 메시지에는 총 710개의 URL이 포함됐다. Google Forms 220개는 신청과 설문으로, Google Docs 110개는 문서 확인으로, Open Kakao 77개는 문의와 참여로 이어졌다. 공지는 해야 할 일을 설명한 뒤 실제 행동이 일어날 외부 페이지를 제시했다. ‘신청’이라는 동사와 링크라는 버튼이 만나는 순간, 공지는 읽을거리에서 해야 할 일로 바뀌었다.</p>
+                <figure class="manuscript-figure action-figure">
+                  <figcaption><span>도표 01</span><strong>핵심 행동어 2,526회의 구성</strong></figcaption>
+                  <div class="action-chart-layout">
+                    <div class="action-donut" role="img" aria-label="신청 50.9%, 모집 21.3%, 제출 14.4%, 마감 6.5%, 선착순 4.6%, 기한 2.3%"><span>2,526<small>회</small></span></div>
+                    <ol class="action-legend"><li><span>신청</span><strong>1,286 · 50.9%</strong></li><li><span>모집</span><strong>539 · 21.3%</strong></li><li><span>제출</span><strong>364 · 14.4%</strong></li><li><span>마감</span><strong>163 · 6.5%</strong></li><li><span>선착순</span><strong>116 · 4.6%</strong></li><li><span>기한</span><strong>58 · 2.3%</strong></li></ol>
+                  </div>
+                </figure>
+                <figure class="manuscript-figure">
+                  <figcaption><span>표 03</span><strong>710개 링크의 목적지</strong></figcaption>
+                  <div class="manuscript-table-wrap"><table><thead><tr><th>목적지</th><th>URL 수</th><th>주요 역할</th></tr></thead><tbody><tr><td>Google Forms</td><td>220개</td><td>신청·설문·접수</td></tr><tr><td>Google Docs</td><td>110개</td><td>문서·자료 확인</td></tr><tr><td>Open Kakao</td><td>77개</td><td>문의·참여</td></tr><tr><td>기타</td><td>303개</td><td>홈페이지·SNS·영상</td></tr><tr><td>합계</td><td>710개</td><td>—</td></tr></tbody></table></div>
+                </figure>
               </div>
             </details>
 
             <details class="manuscript-chapter">
-              <summary><span>나가며</span><strong>한 학년의 공지에는 어떤 규칙이 있었나</strong></summary>
+              <summary><span>나가며</span><strong>공지는 정보를 ‘해야 할 일’로 번역했다</strong></summary>
               <div class="manuscript-body">
-                <p>379일 중 299일 동안 공지가 올라왔고, 가을에는 기록의 밀도가 가장 높았다. 전체 기록의 36.2%는 미디어 표시였으며, 텍스트의 절반 이상에는 이모지와 그림 기호가 있었다. 텍스트의 68.2%에는 행동이나 기한을 요구하는 말이 들어갔고, 710개의 링크가 공지방 밖의 신청서와 문서, 문의방으로 이어졌다. 전체 공지의 73%는 상위 세 발신자가 만들었다.</p>
-                <blockquote class="manuscript-conclusion">소수의 발신자가 글·이미지·이모지·링크를 조합한 공지를 한 해 동안 반복해서 전달하고, 이를 읽은 구성원은 신청·제출·확인과 같은 다음 행동으로 이동한다.</blockquote>
-                <p>이 기록에서 발견한 규칙은 단순히 공지가 많았다는 사실이 아니다. 공지가 특정 형식과 시간, 전달 경로, 발신 구조를 반복하며 한 학년의 정보 흐름을 조직했다는 점이다. 공지방은 채팅창의 모양을 하고 있었지만 실제로는 정보를 정리하고 배포하는 작은 편집 시스템으로 작동했다.</p>
-                <p>이것이 한 학년 동안 공지방에 온 학과 공지에서 발견한 첫 번째 규칙이다.</p>
+                <p>이 방에는 서로 다른 기관과 단체에서 작성한 공지가 모였다. 긴 설명문과 사진이 이어지고, ❗나 📌이 중요한 부분을 표시했으며, 신청·제출·마감의 언어와 링크가 다음 행동을 안내했다. 이 과정은 379일 중 299일 동안 계속됐고, 수업이 없는 여름방학에도 공지량은 1학기와 크게 다르지 않았다.</p>
+                <p>따라서 공지방의 핵심 기능은 정보를 보관하는 것이 아니라 번역하는 것이었다. 여러 출처에서 들어온 정보를 카카오톡에서 읽을 수 있는 크기로 나누고, 무엇이 중요하며 무엇을 해야 하는지 다시 배열했다. 학생이 실제로 공지를 읽거나 링크를 눌렀는지까지 확인할 수는 없지만, 텍스트의 56.2%에 핵심 행동어가 들어 있고 710개의 링크가 외부 행동으로 이어졌다는 사실은 이 방이 단순한 알림창보다 ‘해야 할 일의 목록’에 가까웠음을 보여준다.</p>
+                <blockquote class="manuscript-conclusion">공지방은 학교의 시간을 전달한 것이 아니라, 학생이 지금 무엇을 먼저 해야 하는지 매일 새롭게 정했다.</blockquote>
+                <p>한 학년의 학교생활은 학사일정표만으로 움직이지 않는다. 실제로 체감하는 시간은 신청이 열리고, 모집이 끝나고, 제출 기한이 다가오는 공지의 연속에 더 가깝다. 한 해의 공지를 모아 본다는 것은 지나간 안내를 다시 읽는 일이 아니라, 학교생활이 어떤 우선순위와 마감으로 조직됐는지를 들여다보는 일이다.</p>
               </div>
             </details>
           </div>
 
           <div class="manuscript-review-note">
-            <span>다음 편집 표시</span>
-            <p><strong>유지</strong> 근거가 분명하고 책의 질문에 직접 답하는 문장 · <strong>삭제</strong> 같은 의미를 반복하거나 지나치게 설명적인 문장 · <strong>추가 확인</strong> 통계 밖의 원인을 암시하는 문장</p>
+            <span>Ver.01.01 편집 원칙</span>
+            <p>본문은 패턴마다 2–4개의 줄글 문단으로 구성하고, 수치 비교·원형 그래프·이모지 인덱스·링크 표는 본문 밖의 독립된 그래픽 자료로 분리한다.</p>
           </div>
         </section>
 
@@ -883,7 +893,7 @@
               <div class="archive-toolbar">
                 <div>
                   <span>작업 기록</span>
-                  <strong><span data-log-count>6</span>개</strong>
+                  <strong><span data-log-count>7</span>개</strong>
                 </div>
                 <button type="button" data-export-log>TXT로 내보내기</button>
               </div>
@@ -918,6 +928,11 @@
                   <div class="log-meta"><span>RESULT</span><time datetime="2026-08-09">2026.08.09</time></div>
                   <h3>원고 Ver.01 작성</h3>
                   <p>선택한 8개 분석을 지속·조합·이동·집중의 네 가지 규칙으로 구성해, 들어가며와 나가며를 갖춘 첫 원고를 완성했다.</p>
+                </article>
+                <article class="log-entry log-seed">
+                  <div class="log-meta"><span>REVISION</span><time datetime="2026-08-10">2026.08.10</time></div>
+                  <h3>원고 Ver.01.01 수정</h3>
+                  <p>작업 과정 설명과 발신자 중심 분석을 덜어내고, 학사 구간·콘텐츠 구성·이모지 353종·핵심 행동어를 네 가지 패턴의 줄글 본문과 별도 그래픽 자료로 다시 구성했다.</p>
                 </article>
               </div>
             </div>
