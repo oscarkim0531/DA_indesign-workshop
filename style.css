@@ -843,6 +843,75 @@ select:focus-visible {
   border-top: 1px solid var(--black);
 }
 
+.work02-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 28px;
+  border-top: 1px solid var(--black);
+  border-left: 1px solid var(--black);
+}
+
+.work02-summary article {
+  min-height: 190px;
+  padding: 22px;
+  border-right: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+}
+
+.work02-summary span,
+.work02-priority span {
+  display: block;
+  margin-bottom: 18px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+}
+
+.work02-summary strong {
+  display: block;
+  margin-bottom: 14px;
+  font-size: clamp(20px, 2.2vw, 30px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.work02-summary p,
+.work02-priority p {
+  margin: 0;
+  color: var(--gray-700);
+}
+
+.work02-priority {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 28px;
+  margin-bottom: 44px;
+  padding: 22px 0;
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+}
+
+.work02-priority span {
+  margin: 0;
+}
+
+.work02-roadmap .phase-card.is-current .phase-index,
+.work02-roadmap .phase-card.is-current .phase-content {
+  color: var(--white);
+  background: var(--black);
+}
+
+.work02-roadmap .phase-card.is-current .phase-content > p,
+.work02-roadmap .phase-card.is-current .phase-index span {
+  color: var(--gray-300);
+}
+
+.work02-roadmap .phase-card.is-current .deliverable,
+.work02-roadmap .phase-card.is-current .phase-status {
+  border-color: var(--gray-500);
+}
+
 .phase-card {
   display: grid;
   grid-template-columns: 164px 1fr;
@@ -3008,6 +3077,15 @@ body {
 }
 
 @media (max-width: 760px) {
+  .work02-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .work02-priority {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
   .source-download,
   .tone-record {
     grid-template-columns: 1fr;
@@ -3034,6 +3112,16 @@ body {
   .page-plan-copy,
   .graphic-note {
     padding: 22px 18px;
+  }
+}
+
+@media (max-width: 520px) {
+  .work02-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .work02-summary article {
+    min-height: 0;
   }
 }
 

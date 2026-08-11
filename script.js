@@ -15,6 +15,7 @@
 
   const shell = document.querySelector(".app-shell");
   const taskInputs = [...document.querySelectorAll("[data-task]")];
+  const currentTaskInputs = [...document.querySelectorAll("[data-current-task]")];
   const progressValues = [...document.querySelectorAll("[data-progress-value]")];
   const progressTrack = document.querySelector("[role='progressbar']");
   const progressBar = document.querySelector("[data-progress-bar]");
@@ -39,7 +40,7 @@
 
   const updateProgress = () => {
     const uniqueTasks = new Map();
-    taskInputs.forEach((input) => uniqueTasks.set(input.dataset.task, input.checked));
+    currentTaskInputs.forEach((input) => uniqueTasks.set(input.dataset.task, input.checked));
 
     const total = uniqueTasks.size;
     const completed = [...uniqueTasks.values()].filter(Boolean).length;
@@ -161,7 +162,7 @@
         logList.insertBefore(article, logList.querySelector(".log-seed"));
       });
 
-    if (logCount) logCount.textContent = String(logs.length + 12);
+    if (logCount) logCount.textContent = String(logs.length + 14);
   };
 
   archiveForm?.addEventListener("submit", (event) => {
@@ -198,6 +199,8 @@
       "[CHECK] 2026.08.10 — 원고·수치·개인정보 최종 점검\n핵심 통계를 대표 CSV와 다시 대조하고, 본문에서 실제 이름·연락처·원문 링크가 드러나지 않는지 확인했다.",
       "[DELIVERABLE] 2026.08.10 — 웹 제출본과 Work 01 인쇄 기능 준비\n개인용 원본 CSV 다운로드와 Work 01 전용 인쇄·PDF 저장 기능을 추가하고, 웹사이트를 주 제출 문서로 정했다.",
       "[PLAN] 2026.08.10 — 내지 20페이지 구성과 그래픽 방향 확정\n속표지부터 캡션까지 여덟 개의 페이지 묶음을 정하고, 전구·기간별 밀도·콘텐츠 비율·이모지 벽·행동어·링크 화면의 그래픽 역할을 함께 기록했다.",
+      "[SOURCE] 2026.08.11 — Work 02 공식 안내 수신\n페이지 순서, 새 문서, 마스터, 스타일, 간격, 이미지, 전체 적용, 매크로로 이어지는 여덟 단계의 과제 범위를 확인했다.",
+      "[PLAN] 2026.08.11 — 8월 18일까지의 Work 02 계획 수립\n구조를 먼저 만들고 디테일을 나중에 다듬는 원칙에 따라, 하루 단위 산출물과 18일 18시 내부 마감을 정했다.",
     ];
     const userLogs = logs.map(
       (log) => `[${log.type}] ${formatDate(log.createdAt)} — ${log.title}\n${log.note}`,
