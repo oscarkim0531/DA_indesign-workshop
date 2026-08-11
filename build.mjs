@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const projectDir = path.dirname(fileURLToPath(import.meta.url));
 const outputDir = path.join(projectDir, "dist", "server");
+const hostingOutputDir = path.join(projectDir, "dist", ".openai");
 
 const sourceAssets = [
   ["/", path.join(projectDir, "index.html"), "text/html; charset=utf-8", "utf8"],
@@ -57,5 +58,10 @@ export default {
 `;
 
 await fs.mkdir(outputDir, { recursive: true });
+await fs.mkdir(hostingOutputDir, { recursive: true });
 await fs.writeFile(path.join(outputDir, "index.js"), workerSource, "utf8");
+await fs.copyFile(
+  path.join(projectDir, ".openai", "hosting.json"),
+  path.join(hostingOutputDir, "hosting.json"),
+);
 console.log("Built dist/server/index.js");
