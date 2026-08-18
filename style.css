@@ -9,6 +9,7 @@
   --gray-100: #efefed;
   --paper: #f7f7f4;
   --white: #ffffff;
+  --yellow: #f0e53b;
   --sidebar: 256px;
   --pad: clamp(24px, 5vw, 72px);
   --display: "Pretendard", "SUIT", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Helvetica Neue", Arial, sans-serif;
@@ -1432,6 +1433,55 @@ select:focus-visible {
   font-size: clamp(20px, 2.3vw, 30px);
   font-weight: 600;
   letter-spacing: -0.025em;
+}
+
+.version-records {
+  margin-top: 46px;
+  border-top: 1px solid var(--black);
+}
+
+.version-record-body {
+  padding: 24px 0 72px;
+}
+
+.version-record-body > .manuscript-cover,
+.version-record-body > .tone-record {
+  margin-top: 18px;
+}
+
+.manuscript-cover-v2 {
+  margin-bottom: 54px;
+}
+
+.inline-highlight {
+  padding: 0.08em 0.16em;
+  background: var(--yellow);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.colophon-record dl {
+  margin: 0;
+  border-top: 1px solid var(--black);
+}
+
+.colophon-record dl > div {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 24px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.colophon-record dt {
+  color: var(--gray-500);
+  font-size: 12px;
+}
+
+.colophon-record dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 .analysis-list {
@@ -3136,6 +3186,15 @@ body {
 }
 
 @media (max-width: 760px) {
+  .version-record-body {
+    padding: 12px 0 48px;
+  }
+
+  .colophon-record dl > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
   .revision-board {
     grid-template-columns: 1fr;
   }

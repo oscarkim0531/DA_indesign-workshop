@@ -162,7 +162,7 @@
         logList.insertBefore(article, logList.querySelector(".log-seed"));
       });
 
-    if (logCount) logCount.textContent = String(logs.length + 17);
+    if (logCount) logCount.textContent = String(logs.length + 19);
   };
 
   archiveForm?.addEventListener("submit", (event) => {
@@ -204,6 +204,8 @@
       "[DELIVERABLE] 2026.08.18 — 24쪽 인디자인 PDF 검토본 완성\n표지 4쪽과 내지 20쪽에 마스터·페이지 번호·바닥글·원고 Ver.02·그래픽 자리 표시·판권지를 배치했다.",
       "[CHECK] 2026.08.18 — PDF 검토 메모를 후속 단계로 분리\n그래픽 제작과 세부 시각 보완 사항은 Work 02 완료 조건에서 제외하고, 다음 편집 단계에서 참고할 메모로 이관했다.",
       "[COMPLETE] 2026.08.18 — Work 02 완료\n페이지 순서, 문서·마스터, 텍스트 위계와 전체 배치, 그래픽 영역 표시, 매크로 변경 시스템, 실물 크기 검수를 완료했다. 실제 그래픽은 후속 단계로 넘겼다.",
+      "[REVISION] 2026.08.18 — 원고 Ver.02 기록\n24쪽 PDF에 실제 배치된 03–18쪽 본문과 강조문, 20쪽 판권 정보를 페이지 순서대로 옮겼다. 원고 Ver.01.01은 이전 버전 토글에 보존했다.",
+      "[REVISION] 2026.08.18 — 페이지 스케치 Ver.02 기록\nWork 02의 실제 배치를 기준으로 표지 4쪽과 내지 20쪽을 다시 정리했다. 02·19쪽의 여백, 분리된 밀도 분석, 그래픽 자리 표시와 20쪽 판권 구성을 반영했다.",
     ];
     const userLogs = logs.map(
       (log) => `[${log.type}] ${formatDate(log.createdAt)} — ${log.title}\n${log.note}`,
