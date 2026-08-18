@@ -912,6 +912,65 @@ select:focus-visible {
   border-color: var(--gray-500);
 }
 
+.work02-roadmap .phase-card.is-complete .phase-index strong {
+  color: var(--black);
+}
+
+.work02-roadmap .phase-card.is-complete .phase-status {
+  color: var(--white);
+  background: var(--black);
+}
+
+.revision-board {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--black);
+  border-left: 1px solid var(--black);
+}
+
+.revision-card {
+  min-height: 420px;
+  padding: clamp(28px, 4vw, 52px);
+  border-right: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+}
+
+.revision-card > span {
+  font-family: var(--mono);
+  font-size: 11px;
+}
+
+.revision-card h3 {
+  max-width: 520px;
+  margin: 18px 0 32px;
+  font-size: clamp(25px, 2.8vw, 38px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+
+.revision-card ol {
+  margin: 0;
+  padding-left: 1.3em;
+}
+
+.revision-card li {
+  padding: 10px 0;
+  border-top: 1px solid var(--gray-300);
+  color: var(--gray-700);
+  line-height: 1.65;
+}
+
+.revision-card.is-urgent {
+  color: var(--white);
+  background: var(--black);
+}
+
+.revision-card.is-urgent li {
+  color: var(--gray-300);
+  border-color: #3a3a3a;
+}
+
 .phase-card {
   display: grid;
   grid-template-columns: 164px 1fr;
@@ -3077,6 +3136,14 @@ body {
 }
 
 @media (max-width: 760px) {
+  .revision-board {
+    grid-template-columns: 1fr;
+  }
+
+  .revision-card {
+    min-height: auto;
+  }
+
   .work02-summary {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

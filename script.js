@@ -1,5 +1,5 @@
 (() => {
-  const TASK_KEY = "da-indesign-project-current-tasks-v2";
+  const TASK_KEY = "da-indesign-project-current-tasks-v3";
   const NOTE_KEY = "da-indesign-project-notes-v1";
   const LOG_KEY = "da-indesign-project-logs-v1";
   const LEGACY_KEYS = {
@@ -162,7 +162,7 @@
         logList.insertBefore(article, logList.querySelector(".log-seed"));
       });
 
-    if (logCount) logCount.textContent = String(logs.length + 14);
+    if (logCount) logCount.textContent = String(logs.length + 16);
   };
 
   archiveForm?.addEventListener("submit", (event) => {
@@ -201,6 +201,8 @@
       "[PLAN] 2026.08.10 — 내지 20페이지 구성과 그래픽 방향 확정\n속표지부터 캡션까지 여덟 개의 페이지 묶음을 정하고, 전구·기간별 밀도·콘텐츠 비율·이모지 벽·행동어·링크 화면의 그래픽 역할을 함께 기록했다.",
       "[SOURCE] 2026.08.11 — Work 02 공식 안내 수신\n페이지 순서, 새 문서, 마스터, 스타일, 간격, 이미지, 전체 적용, 매크로로 이어지는 여덟 단계의 과제 범위를 확인했다.",
       "[PLAN] 2026.08.11 — 8월 18일까지의 Work 02 계획 수립\n구조를 먼저 만들고 디테일을 나중에 다듬는 원칙에 따라, 하루 단위 산출물과 18일 18시 내부 마감을 정했다.",
+      "[DELIVERABLE] 2026.08.18 — 24쪽 인디자인 PDF 검토본 완성\n표지 4쪽과 내지 20쪽에 마스터·페이지 번호·바닥글·원고 Ver.02·그래픽 자리 표시·판권지를 배치했다.",
+      "[CHECK] 2026.08.18 — PDF 펼침 검토와 마감 우선순위 확정\n16–17쪽 긴 본문, 18–19쪽 빈 펼침, 10–11쪽 정렬, 숫자 색상, 표지·그래픽·출력 검수를 최종 보완 항목으로 정리했다.",
     ];
     const userLogs = logs.map(
       (log) => `[${log.type}] ${formatDate(log.createdAt)} — ${log.title}\n${log.note}`,
