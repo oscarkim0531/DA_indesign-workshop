@@ -1,5 +1,5 @@
 (() => {
-  const TASK_KEY = "da-indesign-project-current-tasks-v4";
+  const TASK_KEY = "da-indesign-project-current-tasks-v5";
   const NOTE_KEY = "da-indesign-project-notes-v1";
   const LOG_KEY = "da-indesign-project-logs-v1";
   const LEGACY_KEYS = {
@@ -162,7 +162,7 @@
         logList.insertBefore(article, logList.querySelector(".log-seed"));
       });
 
-    if (logCount) logCount.textContent = String(logs.length + 19);
+    if (logCount) logCount.textContent = String(logs.length + 21);
   };
 
   archiveForm?.addEventListener("submit", (event) => {
@@ -206,6 +206,8 @@
       "[COMPLETE] 2026.08.18 — Work 02 완료\n페이지 순서, 문서·마스터, 텍스트 위계와 전체 배치, 그래픽 영역 표시, 매크로 변경 시스템, 실물 크기 검수를 완료했다. 실제 그래픽은 후속 단계로 넘겼다.",
       "[REVISION] 2026.08.18 — 원고 Ver.02 기록\n24쪽 PDF에 실제 배치된 03–18쪽 본문과 강조문, 20쪽 판권 정보를 페이지 순서대로 옮겼다. 원고 Ver.01.01은 이전 버전 토글에 보존했다.",
       "[REVISION] 2026.08.18 — 페이지 스케치 Ver.02 기록\nWork 02의 실제 배치를 기준으로 표지 4쪽과 내지 20쪽을 다시 정리했다. 02·19쪽의 여백, 분리된 밀도 분석, 그래픽 자리 표시와 20쪽 판권 구성을 반영했다.",
+      "[SOURCE] 2026.08.19 — Work 03 공식 안내와 개별 피드백 확인\n타이포그래피 위계, 포인트 색상, 그래픽 프레임, 표·숫자·그래프·표지 과제를 확인했다. 오스카님 작업에는 숫자 GREP, 채도 높은 숫자색, 바닥글 위치 상향, 그래픽 집중이 핵심 피드백으로 제시되었다.",
+      "[PLAN] 2026.08.19 — 8월 25일까지의 거의 완성 계획 수립\n19일 활자 보정, 20일 그래픽 시스템, 21–23일 내지 그래픽, 24일 표지와 전체 통합, 25일 실물·프리플라이트 검수 순서로 내부 마감을 하루 앞당겼다.",
     ];
     const userLogs = logs.map(
       (log) => `[${log.type}] ${formatDate(log.createdAt)} — ${log.title}\n${log.note}`,
