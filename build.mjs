@@ -23,10 +23,64 @@ for (const [route, filename, contentType, encoding] of sourceAssets) {
 }
 
 const workerSource = `const assets = new Map(${JSON.stringify(assets)});
+const downloads = new Map([
+  ["/downloads/A-School-Year-in-the-Inbox.pdf", {
+    key: "final/A-School-Year-in-the-Inbox.pdf",
+    filename: "A School Year in the Inbox.pdf",
+    contentType: "application/pdf",
+  }],
+  ["/downloads/Final_Package.zip", {
+    key: "final/Final_Package.zip",
+    filename: "Final_Package.zip",
+    contentType: "application/zip",
+  }],
+]);
 
 export default {
-  async fetch(request) {
+  async fetch(request, env) {
     const url = new URL(request.url);
+    const download = downloads.get(url.pathname);
+
+    if (download) {
+      if (!env?.FILES) {
+        return new Response("Download storage unavailable", { status: 503 });
+      }
+      const object = await env.FILES.get(download.key);
+      if (!object) {
+        return new Response("File not ready", { status: 404 });
+      }
+      const headers = new Headers();
+      object.writeHttpMetadata(headers);
+      headers.set("content-type", download.contentType);
+      headers.set("content-length", String(object.size));
+      headers.set("content-disposition", "attachment; filename*=UTF-8''" + encodeURIComponent(download.filename));
+      headers.set("cache-control", "public, max-age=3600");
+      headers.set("x-content-type-options", "nosniff");
+      return new Response(request.method === "HEAD" ? null : object.body, {
+        status: 200,
+        headers,
+      });
+    }
+
+    if (url.pathname === "/_site-upload" && request.method === "PUT") {
+      if (!env?.UPLOAD_SECRET || request.headers.get("authorization") !== "Bearer " + env.UPLOAD_SECRET) {
+        return new Response("Not found", { status: 404 });
+      }
+      const file = url.searchParams.get("file");
+      const upload = file === "pdf"
+        ? { key: "final/A-School-Year-in-the-Inbox.pdf", contentType: "application/pdf" }
+        : file === "zip"
+          ? { key: "final/Final_Package.zip", contentType: "application/zip" }
+          : null;
+      if (!upload || !request.body) {
+        return new Response("Invalid upload", { status: 400 });
+      }
+      await env.FILES.put(upload.key, request.body, {
+        httpMetadata: { contentType: upload.contentType },
+      });
+      return Response.json({ ok: true, key: upload.key }, { status: 201 });
+    }
+
     const asset = assets.get(url.pathname);
 
     if (!asset) {
