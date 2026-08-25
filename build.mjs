@@ -12,6 +12,7 @@ const sourceAssets = [
   ["/style.css", path.join(projectDir, "style.css"), "text/css; charset=utf-8", "utf8"],
   ["/script.js", path.join(projectDir, "script.js"), "text/javascript; charset=utf-8", "utf8"],
   ["/og.png", path.join(projectDir, "public", "og.png"), "image/png", "base64"],
+  ["/favicon.png", path.join(projectDir, "public", "favicon.png"), "image/png", "base64"],
 ];
 
 const assets = [];
