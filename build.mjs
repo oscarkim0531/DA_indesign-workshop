@@ -98,9 +98,7 @@ export default {
         : sourceBody;
     const headers = {
       "content-type": contentType,
-      "cache-control": url.pathname === "/" || url.pathname === "/index.html"
-        ? "public, max-age=0, must-revalidate"
-        : "private, max-age=3600",
+      "cache-control": "public, max-age=0, must-revalidate",
       "x-content-type-options": "nosniff",
     };
     return new Response(request.method === "HEAD" ? null : body, {
