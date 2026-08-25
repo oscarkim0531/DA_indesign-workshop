@@ -1,5 +1,5 @@
 (() => {
-  const TASK_KEY = "da-indesign-project-current-tasks-v5";
+  const TASK_KEY = "da-indesign-project-current-tasks-v6";
   const NOTE_KEY = "da-indesign-project-notes-v1";
   const LOG_KEY = "da-indesign-project-logs-v1";
   const LEGACY_KEYS = {
@@ -162,7 +162,7 @@
         logList.insertBefore(article, logList.querySelector(".log-seed"));
       });
 
-    if (logCount) logCount.textContent = String(logs.length + 21);
+    if (logCount) logCount.textContent = String(logs.length + 23);
   };
 
   archiveForm?.addEventListener("submit", (event) => {
@@ -208,6 +208,8 @@
       "[REVISION] 2026.08.18 — 페이지 스케치 Ver.02 기록\nWork 02의 실제 배치를 기준으로 표지 4쪽과 내지 20쪽을 다시 정리했다. 02·19쪽의 여백, 분리된 밀도 분석, 그래픽 자리 표시와 20쪽 판권 구성을 반영했다.",
       "[SOURCE] 2026.08.19 — Work 03 공식 안내와 개별 피드백 확인\n타이포그래피 위계, 포인트 색상, 그래픽 프레임, 표·숫자·그래프·표지 과제를 확인했다. 오스카님 작업에는 숫자 GREP, 채도 높은 숫자색, 바닥글 위치 상향, 그래픽 집중이 핵심 피드백으로 제시되었다.",
       "[PLAN] 2026.08.19 — 8월 25일까지의 거의 완성 계획 수립\n19일 활자 보정, 20일 그래픽 시스템, 21–23일 내지 그래픽, 24일 표지와 전체 통합, 25일 실물·프리플라이트 검수 순서로 내부 마감을 하루 앞당겼다.",
+      "[RESULT] 2026.08.25 — Work 03 핵심 그래픽과 표지 반영\n전구 100개, 월별 공지량, 학사 기간별 밀도, 공지 유형, 이모지 353종, 반복 단어, 링크 화면과 표지 타임라인을 실제 지면에 적용했다. 노랑·보라·검정·흰색의 시각 체계와 캡션 문법도 전 페이지에 연결했다.",
+      "[DELIVERABLE] 2026.08.25 — 거의 완성 PDF 확보\n겉표지 앞·뒤와 내지 20쪽을 포함한 22쪽 검토 PDF를 저장했다. 도입부터 결론, 판권까지의 원고와 모든 핵심 그래픽이 배치된 상태이며, 실물 출력·프리플라이트·편집 원본 백업만 최종 확인 항목으로 남겼다.",
     ];
     const userLogs = logs.map(
       (log) => `[${log.type}] ${formatDate(log.createdAt)} — ${log.title}\n${log.note}`,
